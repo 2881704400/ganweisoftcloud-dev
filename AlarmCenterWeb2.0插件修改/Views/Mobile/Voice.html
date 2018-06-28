@@ -1,0 +1,41 @@
+﻿
+
+    <div data-page="Voice" class="page mobileNotSelect" id="Voice">
+        <div class="navbar">
+    <div class="navbar-inner">
+        <div class="center sliding title">语音控制</div>
+        <div class="right">
+            <a href="#" class="link icon-only panel-open"><i class="iconfont icon-caidan"></i></a>
+        </div>
+    </div>
+</div>
+        <div class="page-content tabs-animated-wrap">
+            <div class="list voice-list" style="margin:0;z-index:10;">
+                <ul>
+                    <li>
+                        <a href="#" class="item-link smart-select smart-select-init" data-back-text="" id="voiceList" 
+                        onchange="onVoiceList()">
+                            <select name="voiceTop">
+                                <option value="0">百度</option>
+                                <option value="1">讯飞</option>
+                            </select>
+                            <div class="item-content">
+                                <div class="item-inner" id="voiceListName">
+                                    <div class="item-title">语音</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="voiceDivs flexBoxs" style="z-index:9;">
+                <div class="voiceDiv">
+                    <div id="voiceMessage" class="voiceTitle">按住说话</div>
+                    <div id="waveAnim" class="waveAnim" style="display:none;"><i></i><i></i><i></i><i></i><i></i></div>
+                    <div class="voice" id="voiceBtn"><i class="iconfont icon-yuyin2"></i></div>
+                    <div class="voicetest"></div>
+                </div>
+            </div>
+        </div>
+    </div>

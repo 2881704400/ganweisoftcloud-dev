@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>登录</title>
+    <link rel="icon" href="/Image/logo.png" type="image/x-icon">
+    <!--动画样式-->
+    <link rel="stylesheet" type="text/css" href="/Styles/Plugin/animate.min.css" />
+    <!--图标字体样式-->
+    <link rel="stylesheet" type="text/css" href="/fonts/iconfont.css" />
+    <!--所有控件皮肤-->
+    <!--界面样式-->
+    <link rel="stylesheet" type="text/css" href="/Styles/login.css" />
+</head>
+<body>
+    <div class="signin-content">
+        <form class="flipInX animated" autocomplete="off">
+            <!--<h2 class="signin-heading"><img src="/Image/logo.png" /><span>新一代机房综合监控系统</span></h2>-->
+            <div class="signin-form">
+                <div class="signin-input">
+                    <i class="iconfont icon-yonghu"></i>
+                    <input type="text" id="inputName" name="inputName" placeholder="请输入用户名" required="" autofocus="">
+                </div>
+                <div class="signin-input">
+                    <i class="iconfont icon-password"></i>
+                    <input type="password" id="inputPassword" name="inputPassword" placeholder="请输入密码" required="" data-action="loginOnKey">
+                </div>
+                <!--<p class="advanced_service" data-action="loginAdvanced">高级</p>-->
+                <button class="btn btns-style-5" data-action="loginSumit">登 录 <i class="iconfont icon-youjiantou2"></i></button>
+                <p class="advanced_service" data-action="loginAdvanced" style="display:none;">高级</p>
+                <div id="message" style="width:100%;text-align:center;"></div>
+            </div>
+            <!--<p class="signin-copyright">Copyright 2016.</p>-->
+        </form>
+    </div>
+    <div id="loading-center" style="display:none">
+        <div id="loading-center-absolute">
+            <div class="object object_zero"><img src="/Image/login/00.png" /></div>
+            <div class="object object_one"><img src="/Image/login/01.png" /></div>
+            <div class="object object_two"><img src="/Image/login/02.png" /></div>
+            <div class="object object_three"><img src="/Image/login/03.png" /></div>
+        </div>
+        <p class="loading-text">正在连接…</p>
+    </div>
+    <script src="/Scripts/plug/jquery-1.10.1.min.js"></script>
+    <script src="/Scripts/plug/fastclick.min.js"></script>
+    <script src="/Scripts/login.js"></script>
+</body>
+</html>

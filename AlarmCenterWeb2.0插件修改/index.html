@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width,user-scalable=no" name="viewport" />
+    <title>Welcome!</title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function () {
+            var sUserAgent = navigator.userAgent.toLowerCase();
+            //var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+            var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+            var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+            var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+            var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+            var bIsAndroid = sUserAgent.match(/android/i) == "android";
+            //var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+            // window.location.href = "/Views/login.html";
+            // return;
+            if (bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsWM) {
+                try{
+                    //if (window.localStorage.userName != "" && window.localStorage.userName != null) {
+                    //    window.location.href = "/Views/Mobile/home.html";
+                    //}
+                    //else {
+                    //    window.location.href = "/Views/login.html";
+                    //}
+                    window.location.href = "/Views/login.html";
+                }
+                catch (ex) {
+                    window.location.href = "/Views/login.html";
+                }
+                
+            } else {
+                try {
+                    window.location.href = "/Views/Home/index.html";
+                }
+                catch (ex) {
+                    window.location.href = "/Views/Home/index.html";
+                }
+            }
+            return;
+        }
+    </script>
+</body>
+</html>

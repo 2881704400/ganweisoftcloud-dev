@@ -1,0 +1,74 @@
+﻿<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="back link">
+                <i class="iconfont icon-back"></i>
+            </a>
+        </div>
+        <div class="center" id="popupTitle"></div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="RealTimeTable" class="page" id="RealTimeTable">
+        <div class="page-content tabs-animated-wrap">
+            <div class="buttons-row">
+                <a id="tableYcLi" href="#tableYcDiv" class="tab-link active button">模拟量</a>
+                <a id="tableYxLi" href="#tableYxDiv" class="tab-link button">状态量</a>
+                <a id="tableSeLi" href="#tableSeDiv" class="tab-link button">设置</a>
+            </div>
+            <div class="tabs">
+                <div id="tableYcDiv" class="tab active pull-to-refresh-content" style="overflow:auto;position:relative;" data-ptr-distance="55">
+                    <div class="pull-to-refresh-layer">
+                        <div class="preloader"></div>
+                        <div class="pull-to-refresh-arrow"></div>
+                    </div>
+                    <div class="tableAuto">
+                        <table id="tableYc">
+                            <thead>
+                                <tr>
+                                    <th>状态</th>
+                                    <th>模拟量名称</th>
+                                    <th>实时值</th>
+                                    <th>曲线</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Tab 2 -->
+                <div id="tableYxDiv" class="tab pull-to-refresh-content" style="overflow:auto;position:relative;" data-ptr-distance="55">
+                    <div class="pull-to-refresh-layer">
+                        <div class="preloader"></div>
+                        <div class="pull-to-refresh-arrow"></div>
+                    </div>
+                    <div class="tableAuto">
+                        <table id="tableYx">
+                            <thead>
+                                <tr>
+                                    <th>状态</th>
+                                    <th>状态量名称</th>
+                                    <th>实时状态</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Tab 3 -->
+                <div id="tableSeDiv" class="tab" style="overflow:auto;">
+                    <div class="tableAuto tableTDBGNull">
+                        <table id="tableSe">
+                            <thead>
+                                <tr>
+                                    <th>设置命令</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

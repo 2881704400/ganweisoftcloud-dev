@@ -1,0 +1,106 @@
+﻿/*左滑动（进入）*/
+.slide-in {-webkit-animation: slideInAnimation 500ms forwards;animation: slideInAnimation 500ms forwards;}
+@-webkit-keyframes slideInAnimation {
+  0% {-webkit-transform: translate3d(100%, 0, 0);}
+  100% {-webkit-transform: translate3d(0, 0, 0);}
+}
+@keyframes slideInAnimation {/* 注意keyfranes命名在移动端不能出现-符号，比如slide-inAnimation这是错误的写法 */
+  0% {transform: translate3d(100%, 0, 0);}
+  100% {transform: translate3d(0, 0, 0);}
+}
+.slide-out {-webkit-animation: slideOutAnimation 500ms forwards;animation: slideOutAnimation 500ms forwards;}
+@-webkit-keyframes slideOutAnimation {
+  0% {-webkit-transform: translate3d(0%, 0, 0);}
+  100% {-webkit-transform: translate3d(-100%, 0, 0);}
+}
+@keyframes slideOutAnimation {
+  0% {transform: translate3d(0%, 0, 0);}
+  100% {transform: translate3d(-100%, 0, 0);}
+}
+/*右滑动（退出）*/
+.slideRight-in {-webkit-animation: slideRightInAnimation 500ms forwards;animation: slideRightInAnimation 500ms forwards;}
+@-webkit-keyframes slideRightInAnimation {
+  0% {-webkit-transform: translate3d(-100%, 0, 0);}
+  100% {-webkit-transform: translate3d(0, 0, 0);}
+}
+@keyframes slideRightInAnimation {
+  0% {transform: translate3d(-100%, 0, 0);}
+  100% {transform: translate3d(0, 0, 0);}
+}
+.slideRight-out {-webkit-animation: slideRightOutAnimation 500ms forwards;animation: slideRightOutAnimation 500ms forwards;}
+@-webkit-keyframes slideRightOutAnimation {
+  0% {-webkit-transform: translate3d(0%, 0, 0);}
+  100% {-webkit-transform: translate3d(100%, 0, 0);}
+}
+@keyframes slideRightOutAnimation {
+    0% {transform: translate3d(0%, 0, 0);}
+    100% {transform: translate3d(100%, 0, 0);}
+}
+
+/*从顶部滑入动画（慢）*/
+.Slide-in-topSlow {
+  -webkit-animation: slideInTopSlow 900ms forwards;
+  animation: slideInTopSlow 900ms forwards;
+}
+@-webkit-keyframes slideInTopSlow {
+  0% {-webkit-transform: translateY(-10%);-moz-transform: translateY(-10%);-ms-transform: translateY(-10%);transform: translateY(-10%);opacity: 0;}
+  100% {-webkit-transform: translateY(0);-moz-transform: translateY(0);-ms-transform: translateY(0);transform: translateY(0);opacity: 1;}
+}
+@keyframes slideInTopSlow {
+  0% {-webkit-transform: translateY(-10%);-moz-transform: translateY(-10%);-ms-transform: translateY(-10%);transform: translateY(-10%);opacity: 0;}
+  100% {-webkit-transform: translateY(0);-moz-transform: translateY(0);-ms-transform: translateY(0);transform: translateY(0);opacity: 1;}
+}
+
+/*从顶部滑入动画*/
+.Slide-in-top {
+  -webkit-animation: slideInTop 450ms forwards;
+  animation: slideInTop 450ms forwards;
+}
+@-webkit-keyframes slideInTop {
+  0% {-webkit-transform: translateY(-20%);-moz-transform: translateY(-20%);-ms-transform: translateY(-20%);transform: translateY(-20%);opacity: 0;}
+  100% {-webkit-transform: translateY(0);-moz-transform: translateY(0);-ms-transform: translateY(0);transform: translateY(0);opacity: 1;}
+}
+@keyframes slideInTop {
+  0% {-webkit-transform: translateY(-20%);-moz-transform: translateY(-20%);-ms-transform: translateY(-20%);transform: translateY(-20%);opacity: 0;}
+  100% {-webkit-transform: translateY(0);-moz-transform: translateY(0);-ms-transform: translateY(0);transform: translateY(0);opacity: 1;}
+}
+/*从顶部滑出动画*/
+.Slide-out-top {
+  -webkit-animation: slideOutTop 450ms forwards;
+  animation: slideOutTop 450ms forwards;
+}
+@-webkit-keyframes slideOutTop {
+  100% {-webkit-transform: translateY(-20%);-moz-transform: translateY(-20%);-ms-transform: translateY(-20%);transform: translateY(-20%);opacity: 0;}
+  0% {-webkit-transform: translateY(0);-moz-transform: translateY(0);-ms-transform: translateY(0);transform: translateY(0);opacity: 1;}
+}
+@keyframes slideOutTop {
+  100% {-webkit-transform: translateY(-20%);-moz-transform: translateY(-20%);-ms-transform: translateY(-20%);transform: translateY(-20%);opacity: 0;}
+  0% {-webkit-transform: translateY(0);-moz-transform: translateY(0);-ms-transform: translateY(0);transform: translateY(0);opacity: 1;}
+}
+
+/*从底部滑入动画*/
+.Slide-in-bottom {
+  -webkit-animation: slideInBottom 450ms forwards;
+  animation: slideInBottom 450ms forwards;
+}
+@-webkit-keyframes slideInBottom {
+  0% {-webkit-transform: translateY(20%);-moz-transform: translateY(20%);-ms-transform: translateY(20%);transform: translateY(20%);opacity: 0;}
+  100% {-webkit-transform: translateY(0);-moz-transform: translateY(0);-ms-transform: translateY(0);transform: translateY(0);opacity: 1;}
+}
+@keyframes slideInBottom {
+  0% {-webkit-transform: translateY(20%);-moz-transform: translateY(20%);-ms-transform: translateY(20%);transform: translateY(20%);opacity: 0;}
+  100% {-webkit-transform: translateY(0);-moz-transform: translateY(0);-ms-transform: translateY(0);transform: translateY(0);opacity: 1;}
+}
+/*从底部滑出动画*/
+.Slide-out-bottom {
+  -webkit-animation: slideOutBottom 450ms forwards;
+  animation: slideOutBottom 450ms forwards;
+}
+@-webkit-keyframes slideOutBottom {
+  100% {-webkit-transform: translateY(20%);-moz-transform: translateY(20%);-ms-transform: translateY(20%);transform: translateY(20%);opacity: 0;}
+  0% {-webkit-transform: translateY(0);-moz-transform: translateY(0);-ms-transform: translateY(0);transform: translateY(0);opacity: 1;}
+}
+@keyframes slideOutBottom {
+  100% {-webkit-transform: translateY(20%);-moz-transform: translateY(20%);-ms-transform: translateY(20%);transform: translateY(20%);opacity: 0;}
+  0% {-webkit-transform: translateY(0);-moz-transform: translateY(0);-ms-transform: translateY(0);transform: translateY(0);opacity: 1;}
+}

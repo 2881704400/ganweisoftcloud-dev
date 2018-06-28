@@ -1,0 +1,71 @@
+﻿
+
+    <div data-page="EventSelect" class="page" id="EventSelect">
+         <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left">
+                    <a href="#" class="back link">
+                        <i class="iconfont icon-back"></i>
+                    </a>
+                </div>
+                <div class="center sliding title">事件查询</div>
+            </div>
+        </div>       
+        <div class="page-content hide-bars-on-scroll">
+            <div class="list-block list" style="margin:0;">
+                <ul>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media" id="selectDate" values="0">时间跨度：</div>
+                            <div class="item-inner">
+                                <div id="timeScreen" class="item-title timeScreen">
+                                    <div class="chip active" value="0">
+                                        <span class="chip-label">当天</span>
+                                    </div>
+                                    <div class="chip" value="1">
+                                        <span class="chip-label">本周</span>
+                                    </div>
+                                    <div class="chip" value="2">
+                                        <span class="chip-label">本月</span>
+                                    </div>
+                                    <div class="chip" value="3">
+                                        <span class="chip-label">用户指定</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">开始时间：</div>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    <input type="text" value="" readonly id="iptEvtSel_1" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">结束时间：</div>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    <input type="text" value="" readonly id="iptEvtSel_2" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="row evtSelect">
+                    <div class="col-33 item-title"></div>
+                    <div class="col-33 item-title"></div>
+                    <div class="col-27" id="screenings">筛选<i class="iconfont icon-shaixuan"></i></div>
+                </div>
+            </div>
+
+            <div class="list-block">
+                <a href="#" id="querySelect" class="button button-big button-fill" style="width:90%;margin:0 auto;margin-top:35px;">查询</a>
+            </div>
+        </div>
+    </div>

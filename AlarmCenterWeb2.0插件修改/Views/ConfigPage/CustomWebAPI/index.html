@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>自定义API</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/Styles/configPage.css" />
+</head>
+<body>
+    <label>
+        <span>用户名：</span>
+        <input type="text" id="userName" />
+    </label><br />
+    <label>
+        <span>密码：</span>
+        <input type="password" id="userPwd" />
+    </label><br />
+    <button onclick="getkey()">登录</button>
+
+    <br /><h4>动态编译cs</h4>
+    <span>参数1：文件名（命名格式：GWService.api.xxx）</span><br />
+    <span>参数2：系统动态库，（例如System.dll）</span><br />
+    <span>参数3：第三方动态库</span><br />
+    <input type="text" placeholder="文件名" id="debug_run_cs_1" value="GWService.api." /><br />
+    <input type="text" placeholder="系统动态库" id="debug_run_cs_2" /><br />
+    <input type="text" placeholder="第三方动态库" id="debug_run_cs_3" /><br />
+    <input type="file" id="debug_run_cs_file" multiple />
+    <button onclick="debug_run_cs()">编译动态文件</button>
+    <span id="debug_run_cs_text"></span><br />
+    <h5 style="margin:0;color:#6b6b6b;padding:13px 0 6px;">注：已集成的动态库</h5>
+    <ul id="debug_dlls" style="height:200px;overflow:auto;margin:0;padding:0;color:#6b6b6b;"></ul>
+
+    <br /><h4>执行动态接口</h4>
+    <span>参数1：请求方式GET、POST</span><br />
+    <span>参数2：控制器名</span><br />
+    <span>参数3：接口名</span><br />
+    <span>参数4：传入参数，格式：参数名1=参数值1&参数名2=参数值2</span><br />
+    <input type="text" placeholder="请求方式GET、POST" id="excu_1" value="" />
+    <input type="text" placeholder="控制器名" id="excu_2" value="" />
+    <input type="text" placeholder="接口名" id="excu_3" value="" /><br />
+    <textarea id="excu_4" placeholder="参数" style="height:100px;"></textarea><br />
+    <button onclick="excu_run_sql()">执行SQL动态库</button>
+    <script src="/Scripts/plug/jquery-1.11.3.min.js"></script>
+    <script src="/Scripts/plug/jq.ajax.min.js"></script>
+    <script src="/Scripts/plug/json2.js"></script>
+    <script>
+        window.onload = function () {
+            console.log(window.localStorage.ac_appkey + '-' + window.localStorage.ac_infokey);
+            var li = dlls();
+            $('#debug_dlls').html(li)
+        }
+        var authKey;
+        //获取认证参数
+        function getkey() {
+            $.ajax({
+                type: 'post',
+                url: '/api/server/getkey',
+                dataType: "json",
+                data: {
+                    username: $('#userName').val(),//用户名
+                    userpwd: $('#userPwd').val()//密码
+                },
+                success: function (dt) {
+                    if (dt.HttpStatus == 200) {
+                        var dts = dt.HttpData;
+                        if (dts.code == 200) {
+                            window.localStorage.ac_appkey = dts.data.appkey;
+                            window.localStorage.ac_infokey = dts.data.infokey;
+                            authKey = window.localStorage.ac_appkey + '-' + window.localStorage.ac_infokey;
+                            console.log(authKey);
+                        }
+                    }
+                }
+            });
+        }
+
+        function debug_run_sql() {
+            $.ax({
+                type: 'post',
+                url: '/api/other/debug_run_sql',
+                data: {
+                    controller: $("#debug_run_sql_1").val(),
+                    api_name: $("#debug_run_sql_2").val(),
+                    sqls: $("#debug_run_sql_3").val(),
+                    file_name: '',//文件名，可以不写
+                    version: '1.0'//版本号，可以不写
+                },
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+
+        function debug_run_sql2() {
+            $.ax({
+                type: 'post',
+                url: '/api/other/debug_run_sql',
+                data: {
+                    controller: $("#debug_run_sqls_1").val(),
+                    api_name: $("#debug_run_sqls_2").val(),
+                    sqls: $("#debug_run_sqls_3").val(),
+                    file_name: '',//文件名，可以不写
+                    version: '1.0'//版本号，可以不写
+                },
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+
+        function debug_run_code() {
+            var files = $("#debug_run_code_file")[0].files;
+            var formData = new FormData();
+
+            for (var i = 0; i < files.length; i++) {
+                formData.append('file', files[i]);
+            }
+            //formData.append('file_name', '');//文件名，可以不写
+            //formData.append('version', '1.0');//版本号
+            //formData.append('assemblies', '');//引用第三方类库，多个值用','号隔开
+            var ajaxDom = $.axfilex({
+                type: 'post',
+                url: '/api/other/debug_run_code',
+                data: formData,
+                beforeSend: function () {
+                    $('#debug_run_code_text').html('正在编译...');
+                },
+                success: function (dt) {
+                    if (dt.HttpStatus == 200) {
+                        var dts = dt.HttpData;
+                        if (dts.code == 200) {
+                            console.log(dt);
+                            $('#debug_run_code_text').html('编译成功');
+                        }
+                        else {
+                            $('#debug_run_code_text').html('编译失败');
+                        }
+                    }
+                },
+                error: function () { ajaxDom = null;}
+            });
+        }
+
+        function debug_run_cs() {
+            var files = $("#debug_run_cs_file")[0].files;
+            var formData = new FormData();
+
+            for (var i = 0; i < files.length; i++) {
+                formData.append('file', files[i]);
+            }
+            formData.append('file_name', $('#debug_run_cs_1').val());//文件名
+            formData.append('sys_lib', $('#debug_run_cs_2').val());//系统类库（多个类库用','号隔开）
+            formData.append('bin_lib', $('#debug_run_cs_3').val());//引用第三方类库，多个值用','号隔开
+            var ajaxDom = $.axfilex({
+                type: 'post',
+                url: '/api/other/debug_run_cs',
+                data: formData,
+                beforeSend: function () {
+                    $('#debug_run_cs_text').html('正在编译...');
+                },
+                success: function (dt) {
+                    if (dt.HttpStatus == 200) {
+                        var dts = dt.HttpData;
+                        if (dts.code == 200) {
+                            console.log(dt);
+                            $('#debug_run_cs_text').html('编译成功');
+                        }
+                        else {
+                            $('#debug_run_cs_text').html('编译失败');
+                        }
+                    }
+                },
+                error: function () { ajaxDom = null; }
+            });
+        }
+
+        //已集成公共动态库
+        function dlls() {
+            var li = '';
+            li += '<li>Microsoft.CSharp.dll</li>';
+            li += '<li>System.dll</li>';
+            li += '<li>System.Core.dll</li>';
+            li += '<li>System.Drawing.dll</li>';
+            li += '<li>System.Data.dll</li>';
+            li += '<li>System.EnterpriseServices.dll</li>';
+            li += '<li>System.Net.dll</li>';
+            li += '<li>System.Net.Http.dll</li>';
+            li += '<li>System.Web.dll</li>';
+            li += '<li>System.Web.Entity.dll</li>';
+            li += '<li>System.Web.Extensions.dll</li>';
+            li += '<li>System.Xml.dll</li>';
+            li += '<li>System.Xml.Linq.dll</li>';
+
+            li += '<li>AlarmCenter.Core.dll</li>';
+            li += '<li>AlarmCenter.DataCenter.dll</li>';
+            li += '<li>AlarmCenterWcfServiceLibrary.dll</li>';
+            li += '<li>GWService.Net.dll</li>';
+            li += '<li>GWServiceAPI.Net.dll</li>';
+            li += '<li>Newtonsoft.Json.dll</li>';
+            li += '<li>System.Web.Http.dll</li>';
+            li += '<li>System.Net.Http.Formatting.dll</li>';
+            return li;
+        }
+
+        function excu_run_sql() {
+            $.ax({
+                type: $('#excu_1').val(),
+                url: '/api/' + $('#excu_2').val() + '/' + $('#excu_3').val(),
+                data: $('#excu_4').val(),
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

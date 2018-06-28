@@ -1,0 +1,84 @@
+﻿<!--循环任务弹出窗-->
+<div class='fullScreenAll' onclick='onFullScreenAll(this)'></div>
+<div id="showDialog_cirs" class="fullScreenCenter bounceInDown animated mg-lg">
+    <div class="MessageBox_top">
+        <span>更改循环定时任务</span>
+        <button class="MessageBox_top_Exit btns-style-6" onclick="onCencel('fullScreenPopup_Change')"><i class="iconfont icon-guanbi"></i></button>
+    </div>
+    <div class="timed-panel">
+        <div class="col-md-4">
+            <p class="timed-panel-title">循环任务属性设置：</p>
+            <div class="timed-panel-content">
+                <p>循环任务名称：</p>
+                <input id="text_NameCir" type="text" class="input" />
+                <p>有效起始时间：</p>
+                <input id="text_timerCira" type="text" class="input" />
+                <p>有效结束时间：</p>
+                <input id="text_timerCirb" type="text" class="input" />
+                <p>
+                    <label style="cursor:pointer;"><input type="radio" checked="checked" id="radio_1" name="inputRadio" onchange="onExecuteChange(0)"> 立即开始执行</label>
+                </p>
+                <p>
+                    <label style="cursor:pointer;"><input type="radio" id="radio_2" name="inputRadio" onchange="onExecuteChange(0)"> 整点开始执行</label>
+                </p>
+                <p>
+                    <label style="cursor:pointer;"><input type="radio" id="radio_3" name="inputRadio" onchange="onExecuteChange(1)"> 指定开始时间：</label>
+                    <input id="text_timerCirc" type="text" value="00:00:00" style="width:76px;display:inline;padding:6px 10px;" class="input">
+                </p>
+                <p style="line-height:29px;position:relative;">
+                    <input type="checkbox" id="checkbox_1" onclick="checkbox1_click(0,this)" />
+                    <span onclick="checkbox1_click(1)">限制最大循环次数？</span>
+                    <input id="text_timerCird" type="text" value="0" style="width:50px!important;height:29px!important;position:absolute;top:0;right:0;" class="input" /><br>
+                </p>
+                <p>
+                    <input type="checkbox" id="checkbox_2" />
+                    <span onclick="checkbox2_click()">是否必须执行完整？</span>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <p class="timed-panel-title">循环任务内容安排：</p>
+            <div class="timed-panel-content">
+                <div class="timed-loop-left">
+                    <p class="timed-panel-title">一个循环周期内容：</p>
+                    <div class="procsContent-timed listStyle">
+                        <ul id="content_cir"></ul>
+                    </div>
+                    <div class="timed-loop-left-btn">
+                        <button id="btn_cir_dm_1" disabled="disabled" class="btn btns-style-1" onclick="cir_dlb(1,this)">删除</button>
+                        <button id="btn_cir_dm_2" disabled="disabled" class="btn btns-style-1" onclick="cir_dlb(2,this)">上移</button>
+                        <button id="btn_cir_dm_3" disabled="disabled" class="btn btns-style-1" onclick="cir_dlb(3,this)">下移</button>
+                    </div>
+                </div>
+                <div class="timed-loop-right">
+                    <div class="timed-loop-right-content">
+                        <h4>任务动作类型</h4>
+                        <p>
+                            <label style="cursor:pointer;"><input type="radio" checked="checked" id="radio_t1" name="inputRadio_t" onchange="inputRadio_t(0, this)">设备控制</label>
+                        </p>
+                        <select class="select" style="width:100%;" id="dropdown_ul_1"></select>
+                        <p>
+                            <label style="cursor:pointer;"><input type="radio" id="radio_t2" name="inputRadio_t" onchange="inputRadio_t(1, this)">系统任务</label>
+                        </p>
+                        <select class="select" style="width:100%;" id="dropdown_ul_2" disabled="disabled"></select>
+                        <p>
+                            <label style="cursor:pointer;"><input type="radio" id="radio_t3" name="inputRadio_t" onchange="inputRadio_t(2, this)">时间间隔</label>
+                        </p>
+                        <div class="timed-loop-right-text">
+                            <input id="text_time_1" type="text" class="input" disabled="disabled" /><span>天&nbsp;&nbsp;&nbsp;</span>
+                            <input id="text_time_2" type="text" class="input" disabled="disabled" /><span>小时</span>
+                        </div>
+                        <div class="timed-loop-right-text">
+                            <input id="text_time_3" type="text" class="input" disabled="disabled" /><span>分钟</span>
+                            <input id="text_time_4" type="text" class="input" disabled="disabled" /><span>秒</span>
+                        </div>
+                        <button class="btn btns-style-1" onclick="insert_btn(this)">插入</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="MessageBox_p3">
+        <button class="btn btns-style-1" id="btnModalSave">确定</button><button class="btn btns-style-1" onclick="onCencel('fullScreenPopup_Change')">取消</button>
+    </p>
+</div>

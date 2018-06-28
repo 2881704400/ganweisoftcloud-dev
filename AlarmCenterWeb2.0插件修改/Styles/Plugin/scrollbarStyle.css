@@ -1,0 +1,70 @@
+﻿
+/*-webkit浏览器-滚动条样式*/
+::-webkit-scrollbar {
+    width: 10px;
+    height:10px;
+}
+body::-webkit-scrollbar-track{
+    background: rgba(0,0,0,0.1);
+}
+body::-webkit-scrollbar-thumb{
+    background: rgba(0,0,0,0.3);
+}
+body::-webkit-scrollbar-thumb:hover{
+    background: rgba(0,0,0,0.5);
+}
+
+body div::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+}
+ 
+body div::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+}
+body div::-webkit-scrollbar-thumb:hover{
+    background: rgba(255,255,255,0.5);
+}
+body div::-webkit-scrollbar-corner{
+    background: rgba(0,0,0,0.1);
+}
+
+/*-ie浏览器-滚动条样式*/
+body{
+    -ms-scrollbar-track-color:rgba(0,0,0,0.1);
+    -ms-scrollbar-shadow-color:rgba(0,0,0,0.3);
+}
+body div{
+     -ms-scrollbar-track-color:#454545;
+     -ms-scrollbar-shadow-color:#979797;
+     -ms-scrollbar-face-color:#979797;
+     -ms-scrollbar-highlight-color:#bebebe;
+     -ms-scrollbar-arrow-color:#979797;
+}
+
+/*-火狐浏览器-滚动条样式*/
+@-moz-document url-prefix(http://),url-prefix(https://) {   
+    /* 滚动条颜色 */  
+    scrollbar {   
+       -moz-appearance: none !important;   
+       background: rgb(0,255,0) !important;   
+    }   
+    /* 滚动条按钮颜色 */  
+    thumb,scrollbarbutton {   
+       -moz-appearance: none !important;   
+       background-color: rgb(0,0,255) !important;   
+    }   
+    /* 鼠标悬停时按钮颜色 */  
+      
+    thumb:hover,scrollbarbutton:hover {   
+       -moz-appearance: none !important;   
+       background-color: rgb(255,0,0) !important;   
+    }   
+    /* 隐藏上下箭头 */  
+    scrollbarbutton {   
+       display: none !important;   
+    }   
+    /* 纵向滚动条宽度 */  
+    scrollbar[orient="vertical"] {   
+      min-width: 15px !important;   
+    }   
+}

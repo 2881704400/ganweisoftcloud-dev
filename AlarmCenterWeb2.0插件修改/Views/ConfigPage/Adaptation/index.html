@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>适配AlarmCenter服务</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/Styles/configPage.css" />
+</head>
+<body>
+    <button onclick="autoAdaptation()">自动适配</button>
+    <button onclick="customAdaptation()">自定义适配</button>
+    <div id="custom">
+        <span>AlarmCenter bin地址：</span><input type="text" value="D:\AlarmCenter\bin\" />
+        <button onclick="customAdaptationOK()">确定</button>
+    </div>
+    <div id="message"></div>
+    <div class="explain">
+        <h4>说明</h4>
+        <ul>
+            <li>1、地址目录为软件的bin目录</li>
+            <li>2、自动适配：系统将自动寻找目录并自动适配</li>
+            <li>3、自定义适配：系统将输入的目录并自动适配</li>
+        </ul>
+    </div>
+    <script src="/Scripts/plug/jquery-1.10.1.min.js"></script>
+    <script>
+        function autoAdaptation() {
+            postService("");
+        }
+
+        function customAdaptation() {
+            $('#custom').show();
+        }
+
+        function customAdaptationOK() {
+            var path = $('#custom').find('input').val();
+            postService(path);
+        }
+
+        function postService(path) {
+            $.ajax({
+                type: "post",
+                url: "/api/server/version_adapt",
+                data: "fromPath=" + path,
+                success: function (dt) {
+                    $('#message').html(dt.HttpData.data);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

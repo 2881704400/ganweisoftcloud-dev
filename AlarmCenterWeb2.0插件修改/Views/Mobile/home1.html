@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>AlarmCenter | 首页</title>
+    <link rel="icon" href="/Image/logo.png" type="image/x-icon">
+    <!--框架样式-->
+    <link rel="stylesheet" href="/Scripts/plug/1.5.0/framework7.ios.min.css">
+    <link rel="stylesheet" href="/Scripts/plug/1.5.0/framework7.ios.colors.min.css">
+    <!--图标字体样式-->
+    <link rel="stylesheet" type="text/css" href="/fonts/iconfont.css" />
+    <!--声波动画-->
+    <link rel="stylesheet" type="text/css" href="/Styles/Plugin/waveAnimation.css" />
+    <!--本页样式-->
+    <link rel="stylesheet" href="/Styles/Mobile/home.css">
+</head>
+<body>
+    <!-- 状态栏覆盖为全屏模式 -->
+    <!--<div class="statusbar-overlay"></div>-->
+    <!-- 面板覆盖-->
+    <div class="panel-overlay"></div>
+    <!-- 左侧边栏-->
+    <div class="panel panel-left layout-dark panel-cover">
+        <div class="list-block list-page">
+            <ul>
+                <li>
+                    <a href="UserInfor.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="iconfont icon-yonghu"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title" id="userName"></div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="left/EventSelect.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="iconfont icon-chaxun"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">事件查询</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li id="appRichScan" style="display:none;">
+                    <a href="#" class="item-link close-panel" onclick="myJavaFun.RichScan();">
+                        <div class="item-content">
+                            <div class="item-media"><i class="iconfont icon-saoyisao"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">扫一扫</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li id="appCacheClearLi" style="display:none;">
+                    <a href="#" class="item-link" onclick="onAppCacheClear()">
+                        <div class="item-content">
+                            <div class="item-media"><i class="iconfont icon-huancun"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">清空缓存</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item-link" onclick="onAbout()">
+                        <div class="item-content">
+                            <div class="item-media"><i class="iconfont icon-guanyu"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">关于</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item-link" onclick="onUserLogout()">
+                        <div class="item-content">
+                            <div class="item-media"><i class="iconfont icon-logout"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">注销</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 右侧边栏-->
+    <div class="panel panel-right panel-reveal">
+        <div class="content-block">
+            <p>右侧边栏内容</p>
+        </div>
+    </div>
+    <!-- 视图 -->
+    <div class="views">
+        <div class="view view-main">
+            <!-- 顶部导航条-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <!-- 标题 -->
+                    <div class="center sliding">新一代机房综合监控系统</div>
+                    <div class="right">
+                        <a href="#" class="link icon-only open-panel"><i class="iconfont icon-caidan"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- 子界面-->
+            <div class="pages navbar-through toolbar-through">
+                <div data-page="home" class="page" id="home">
+                    <!-- 界面内容 -->
+                    <div class="page-content" id="homeContents" style="display:none;">
+                        <div id="homepagesIDs" class="homepages flexBoxs" style="background:url(/Image/home/home_0.jpg)">
+                            <img id="home_1" src="/Image/home/home_1.jpg" style="width:50%;margin:0 auto;display:block;" />
+                        </div>
+                        <img id="home_2" src="/Image/home/home_2.jpg" style="margin:0 auto;display:block;position:absolute;bottom:50px;z-index:10;width:100%;" />
+                    </div>
+                </div>
+            </div>
+            <!-- 底部工具栏-->
+            <div class="toolbar tabbar tabbar-labels">
+                <div class="toolbar-inner disabled">
+                    <a href="home.html" class="link active no-animation" id="homeTool">
+                        <i class="iconfont icon-home_a" cls="home"></i>
+                        <span class="tabbar-label">首页</span>
+                    </a>
+                    <a href="Message.html" class="link no-animation" id="MessageTool">
+                        <i class="iconfont icon-message_b" cls="message"></i>
+                        <span class="tabbar-label">实时快照</span>
+                    </a>
+                    <a href="RealTime.html" class="link no-animation" id="RealTimeTool">
+                        <i class="iconfont icon-shebei_b" cls="shebei"></i>
+                        <span class="tabbar-label">设备数据</span>
+                    </a>
+                    <a href="Voice.html" class="link no-animation" id="VoiceTool">
+                        <i class="iconfont icon-yuyin_b" cls="yuyin"></i>
+                        <span class="tabbar-label">语音</span>
+                    </a>
+<!--                     <a href="Video.html" class="link no-animation" id="VideoTool">
+                        <i class="iconfont icon-shipin" cls="shipin"></i>
+                        <span class="tabbar-label">视频</span>
+                    </a> -->
+					
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 框架js-->
+    <script src="/Scripts/plug/jquery-1.10.1.min.js"></script>
+    <script src="/Scripts/plug/jq.ajax.min.js"></script>
+    <script src="/Scripts/plug/json2.js"></script>
+    <script src="/Scripts/plug/highcharts.js"></script>
+    <script src="/Scripts/plug/echarts-all-3.js"></script>
+    <script src="/Scripts/plug/china.js"></script>
+    <script type="text/javascript" src="/Scripts/plug/1.5.0/framework7.js"></script>
+    <script type="text/javascript" src="/Scripts/plug/html2canvas.min.js"></script>
+    <!-- 首页js-->
+    <script type="text/javascript" src="/Scripts/mobile/home.js"></script>
+    <!-- 移动端入口js-->
+    <script type="text/javascript" src="/Scripts/mobile/mobileAll.js"></script>
+    <!-- 插件-->
+    <script type="text/javascript" src="/Scripts/mobile/plugin/appPopup.js"></script>
+    <!-- 二维扫描结果 -->
+    <script type="text/javascript" src="/Scripts/mobile/RichScanCallback.js"></script>
+	<script type="text/javascript" src="/Scripts/mobile/plugin/html5media.min.js"></script>
+</body>
+</html>

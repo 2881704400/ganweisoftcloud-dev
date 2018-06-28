@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>权限配置</title>
+</head>
+<body>
+    <div>
+        <span>系统功能</span><input id="page_1" type="checkbox" checked="checked" /><br />
+        <span>定制页面</span><input id="page_2" type="checkbox" checked="checked" /><br />
+        <button onclick="onExecute()">确 定</button>
+        <p id="message"></p>
+    </div>
+    <script src="/Scripts/plug/jquery-1.10.1.min.js"></script>
+    <script src="/Data/PermissionsConfig.js"></script>
+    <script>
+        function onExecute() {
+            if (document.getElementById("page_1").checked) {
+                ajaxService(0);
+            }
+            if (document.getElementById("page_2").checked) {
+                ajaxService(1);
+            }
+        }
+
+        function ajaxService(d) {
+            var perConfigs = perConfig[d];
+            var perConfigList = "";
+            for (var i = 0; i < perConfigs.page.length; i++) {
+                perConfigList += perConfigs.page[i] + "|";
+            }
+            perConfigList = perConfigList.substring(0, perConfigList.length - 1);
+            $.ajax({
+                type: "post",
+                url: "/GWServices.asmx/UserPermissionsUpdage",
+                data: "userName=admin&&tableName=" + perConfigs.tableName + "&&updateStr=" + perConfigList,
+                success: function (dt) {
+                    var texts = parseInt($(dt).children("int").text());
+                    if (texts > 0) {
+                        $("#message").append(perConfigs.tableTitle, "执行成功！");
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

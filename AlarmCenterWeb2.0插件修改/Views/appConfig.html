@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width,user-scalable=no" name="viewport" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.addEventListener('message', function (e) {
+            if (e.source != window.parent) return;
+            var dt = e.data.toString();
+            var dts = dt.substring(1, dt.length);
+            if (dt[0] == '1') {
+                window.localStorage.userName = dts;
+            }
+            else if (dt[0] == '2') {
+                window.localStorage.ac_appkey = dts;
+            }
+            else if (dt[0] == '3') {
+                window.localStorage.ac_infokey = dts;
+            }
+            window.parent.postMessage(window.localStorage.ac_appkey, "*");
+        }, false);
+    </script>
+</body>
+</html>

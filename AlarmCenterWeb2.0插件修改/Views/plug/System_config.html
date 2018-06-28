@@ -1,0 +1,246 @@
+﻿<!--系统配置向导弹出窗-->
+<div class='fullScreenAll' onclick='onFullScreenAll(this)'></div>
+<div id="showDialog_cirs" class="fullScreenCenter bounceInDown animated  mg-default">
+    <div class="MessageBox_top">
+        <span>配置</span>
+        <button class="MessageBox_top_Exit btns-style-6" onclick="onCencel('fullScreenPopup_Config')"><i class="iconfont icon-guanbi"></i></button>
+    </div>
+    <div class="system_plug">
+        <ul class="nav-tabList">
+            <li class="active" data-action="tabList" href="#eqpConf_plug"><span>设备配置</span></li>
+            <li data-action="tabList" href="#ycpConf_plug"><span>模拟量配置</span></li>
+            <li data-action="tabList" href="#yxpConf_plug"><span>状态量配置</span></li>
+            <li data-action="tabList" href="#SetParmConf_plug"><span>设置配置</span></li>
+        </ul>
+        <div class="tab-content">
+            <article id="eqpConf_plug" class="tab-pane active animated">
+                <div id="commonlyList_Equip">
+                    <div class="col-md-4 system_plug_list">
+                        <div class="listStyle">
+                            <ul id="treeList_plug_equip"></ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8 system_plug_Data">
+                        <div class="listStyle system_plug_Data_ul sys_plug_ul_height_1">
+                            <ul>
+                                <li><span>设备号：</span><b id="sys_plug_eq_1"></b><div class="clear"></div></li>
+                                <li><span>设备名称：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_2" onchange="onChangeList('Equip')"/><div class="clear"></div></li>
+                                <li><span>关联页面：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_3" onchange="onChangeList('Equip')" /><div class="clear"></div></li>
+                                <li><span>关联视频：</span><select class="select system_plug_inputs" id="sys_plug_eq_4" onchange="onChangeList('Equip')"></select><div class="clear"></div></li>
+                                <li><span>资产编号：</span><select class="select system_plug_inputs" id="sys_plug_eq_5" onchange="onChangeList('Equip')"></select><div class="clear"></div></li>
+                                <li><span>预案号：</span><select class="select system_plug_inputs" id="sys_plug_eq_6" onchange="onChangeList('Equip')"></select><div class="clear"></div></li>
+                            </ul>
+                        </div>
+                        <div class="listStyle system_plug_Data_ul sys_plug_ul_height_2">
+                            <ul id="plug_Equip_alarm"></ul>
+                        </div>
+                    </div>
+                    <div class="system_plug_botton">
+                        <!--<p><span>以上配置应用于多个设备，请单击 </span><button class="btn btns-style-4">批量配置</button></p>-->
+                        <p><span>配置更多属性，请单击 </span><button class="btn btns-style-4 advancedSetparm" values="Equip">高级配置</button></p>
+                    </div>
+                </div>
+                <div id="advancedList_Equip" style="display:none;">
+                    <div class="col-md-12 system_plug_Data" style="overflow:auto;">
+                        <div class="listStyle advSpan">
+                            <ul>
+                                <li><span>设备属性：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_7" onchange="onChangeList('Equip_adv')" /><div class="clear"></div></li>
+                                <li><span>通讯刷新周期：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_8" onchange="onChangeList('Equip_adv')" /><div class="clear"></div></li>
+                                <li><span>通故障处理意见：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_9" onchange="onChangeList('Equip_adv')" /><div class="clear"></div></li>
+                                <li><span>故障提示：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_10" onchange="onChangeList('Equip_adv')" /><div class="clear"></div></li>
+                                <li><span>故障恢复提示：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_11" onchange="onChangeList('Equip_adv')" /><div class="clear"></div></li>
+                                <li><span>报警声音文件：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_12" onchange="onChangeList('Equip_adv')" /><div class="clear"></div></li>
+                                <li><span>驱动文件：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_13" onchange="onChangeList('Equip_adv')" /><div class="clear"></div></li>
+                                <li><span>通讯端口：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_14" onchange="onChangeList('Equip_adv')" /><div class="clear"></div></li>
+                                <li><span>设备地址：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_15" onchange="onChangeList('Equip_adv')" /><div class="clear"></div></li>
+                                <li><span>通讯参数：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_16" onchange="onChangeList('Equip_adv')" /><div class="clear"></div></li>
+                                <li><span>通讯时间参数：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_17" onchange="onChangeList('Equip_adv')" /><div class="clear"></div></li>
+                                <li><span>报警升级周期（分钟）：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_18" onchange="onChangeList('Equip_adv')" /><div class="clear"></div></li>
+                                <li><span>模板设备号：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_19" onchange="onChangeList('Equip_adv')" /><div class="clear"></div></li>
+                                <li><span>附表名称：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_20" onchange="onChangeList('Equip_adv')" /><div class="clear"></div></li>
+                                <li><span>属性：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_21" onchange="onChangeList('Equip_adv')" /><div class="clear"></div></li>
+                                <li><span>安全时段：</span><input type="text" class="input system_plug_inputs" id="sys_plug_eq_22" onchange="onChangeList('Equip_adv')" /><div class="clear"></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="system_plug_botton">
+                        <p><button class="btn btns-style-4 advancedSetparm" values="Equip">返回</button></p>
+                    </div>
+                </div>
+            </article>
+
+            <article id="ycpConf_plug" class="tab-pane animated">
+                <div id="commonlyList_ycp">
+                    <div class="col-md-4 system_plug_list">
+                        <select id="ycp_plug_select" class="select system_plug_list_select" onchange="sys_plug_change(this)"></select>
+                        <div class="listStyle system_plug_list_lStyle">
+                            <ul id="treeList_plug_ycp"></ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8 system_plug_Data">
+                        <div class="listStyle system_plug_Data_ul sys_plug_ul_height_1">
+                            <ul>
+                                <li><span>设备号：</span><b id="sys_plug_ycp_1"></b><div class="clear"></div></li>
+                                <li><span>模拟量编号：</span><b id="sys_plug_ycp_2"></b><div class="clear"></div></li>
+                                <li><span>模拟量名称：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_3" onchange="onChangeList('ycp')" /><div class="clear"></div></li>
+                                <li><span>下限值：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_4" onchange="onChangeList('ycp')" /><div class="clear"></div></li>
+                                <li><span>回复下限值：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_5" onchange="onChangeList('ycp')" /><div class="clear"></div></li>
+                                <li><span>回复上限值：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_6" onchange="onChangeList('ycp')" /><div class="clear"></div></li>
+                                <li><span>上限值：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_7" onchange="onChangeList('ycp')" /><div class="clear"></div></li>
+                                <li><span>单位：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_8" onchange="onChangeList('ycp')" /><div class="clear"></div></li>
+                                <li><span>关联页面：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_9" onchange="onChangeList('ycp')" /><div class="clear"></div></li>
+                                <li><span>关联视频：</span><select class="select system_plug_inputs" id="sys_plug_ycp_10" onchange="onChangeList('ycp')"></select><div class="clear"></div></li>
+                                <li><span>资产编号：</span><select class="select system_plug_inputs" id="sys_plug_ycp_11" onchange="onChangeList('ycp')"></select><div class="clear"></div></li>
+                                <li><span>预案号：</span><select class="select system_plug_inputs" id="sys_plug_ycp_12" onchange="onChangeList('ycp')"></select><div class="clear"></div></li>
+                                <li><span>曲线记录：</span><input type="checkbox" id="sys_plug_ycp_13" onchange="onChangeList('ycp')" style="cursor:pointer;" /><div class="clear"></div></li>
+                            </ul>
+                        </div>
+                        <div class="listStyle system_plug_Data_ul sys_plug_ul_height_2">
+                            <ul id="plug_ycp_alarm"></ul>
+                        </div>
+                    </div>
+                    <div class="system_plug_botton">
+                        <!--<p><span>以上配置应用于多个设备，请单击 </span><button class="btn btns-style-4">批量配置</button></p>-->
+                        <p><span>配置更多属性，请单击 </span><button class="btn btns-style-4 advancedSetparm" values="ycp">高级配置</button></p>
+                    </div>
+                </div>
+                <div id="advancedList_ycp" style="display:none;">
+                    <div class="col-md-12 system_plug_Data" style="overflow:auto;">
+                        <div class="listStyle advSpan">
+                            <ul>
+                                <li><span>比例变换：</span><input type="checkbox" id="sys_plug_ycp_14" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>曲线记录阈值：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_15" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>实测最小值：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_16" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>实测最大值：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_17" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>最小值：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_18" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>最大值：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_19" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>属性值：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_20" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>操作命令：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_21" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>操作参数：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_22" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>越线滞纳时间（秒）：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_23" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>恢复滞纳时间（秒）：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_24" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>重复报警时间（分钟）：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_25" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>处理意见：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_26" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>报警级别：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_27" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>报警升级周期：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_28" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>越下限事件：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_29" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>越上限事件：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_30" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>声音文件：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_31" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>报警屏蔽：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_32" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                                <li><span>安全时段：</span><input type="text" class="input system_plug_inputs" id="sys_plug_ycp_33" onchange="onChangeList('ycp_adv')" /><div class="clear"></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="system_plug_botton">
+                        <p><button class="btn btns-style-4 advancedSetparm" values="ycp">返回</button></p>
+                    </div>
+                </div>
+            </article>
+
+            <article id="yxpConf_plug" class="tab-pane animated">
+                <div id="commonlyList_yxp">
+                    <div class="col-md-4 system_plug_list">
+                        <select id="yxp_plug_select" class="select system_plug_list_select" onchange="sys_plug_change(this)"></select>
+                        <div class="listStyle system_plug_list_lStyle">
+                            <ul id="treeList_plug_yxp"></ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8 system_plug_Data">
+                        <div class="listStyle system_plug_Data_ul sys_plug_ul_height_1">
+                            <ul>
+                                <li><span>设备号：</span><b id="sys_plug_yxp_1"></b><div class="clear"></div></li>
+                                <li><span>状态量编号：</span><b id="sys_plug_yxp_2"></b><div class="clear"></div></li>
+                                <li><span>状态量名称：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_3" onchange="onChangeList('yxp')" /><div class="clear"></div></li>
+                                <li><span>0-1事件：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_4" onchange="onChangeList('yxp')" /><div class="clear"></div></li>
+                                <li><span>1-0事件：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_5" onchange="onChangeList('yxp')" /><div class="clear"></div></li>
+                                <li><span>关联页面：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_6" onchange="onChangeList('yxp')" /><div class="clear"></div></li>
+                                <li><span>关联视频：</span><select class="select system_plug_inputs" id="sys_plug_yxp_7" onchange="onChangeList('yxp')"></select><div class="clear"></div></li>
+                                <li><span>资产编号：</span><select class="select system_plug_inputs" id="sys_plug_yxp_8" onchange="onChangeList('yxp')"></select><div class="clear"></div></li>
+                                <li><span>预案号：</span><select class="select system_plug_inputs" id="sys_plug_yxp_9" onchange="onChangeList('yxp')"></select><div class="clear"></div></li>
+                            </ul>
+                        </div>
+                        <div class="listStyle system_plug_Data_ul sys_plug_ul_height_2">
+                            <ul id="plug_yxp_alarm"></ul>
+                        </div>
+                    </div>
+                    <div class="system_plug_botton">
+                        <!--<p><span>以上配置应用于多个设备，请单击 </span><button class="btn btns-style-4">批量配置</button></p>-->
+                        <p><span>配置更多属性，请单击 </span><button class="btn btns-style-4 advancedSetparm" values="yxp">高级配置</button></p>
+                    </div>
+                </div>
+                <div id="advancedList_yxp" style="display:none;">
+                    <div class="col-md-12 system_plug_Data" style="overflow:auto;">
+                        <div class="listStyle advSpan">
+                            <ul>
+                                <li><span>取反：</span><input type="checkbox" id="sys_plug_yxp_10" onchange="onChangeList('yxp_adv')" /><div class="clear"></div></li>
+                                <li><span>处理意见0-1：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_11" onchange="onChangeList('yxp_adv')" /><div class="clear"></div></li>
+                                <li><span>处理意见1-0：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_12" onchange="onChangeList('yxp_adv')" /><div class="clear"></div></li>
+                                <li><span>0-1级别：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_13" onchange="onChangeList('yxp_adv')" /><div class="clear"></div></li>
+                                <li><span>1-0级别：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_14" onchange="onChangeList('yxp_adv')" /><div class="clear"></div></li>
+                                <li><span>初始状态：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_15" onchange="onChangeList('yxp_adv')" /><div class="clear"></div></li>
+                                <li><span>属性值：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_16" onchange="onChangeList('yxp_adv')" /><div class="clear"></div></li>
+                                <li><span>操作命令：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_17" onchange="onChangeList('yxp_adv')" /><div class="clear"></div></li>
+                                <li><span>操作参数：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_18" onchange="onChangeList('yxp_adv')" /><div class="clear"></div></li>
+                                <li><span>越线滞纳时间（秒）：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_19" onchange="onChangeList('yxp_adv')" /><div class="clear"></div></li>
+                                <li><span>恢复滞纳时间（秒）：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_20" onchange="onChangeList('yxp_adv')" /><div class="clear"></div></li>
+                                <li><span>重复报警时间（分钟）：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_21" onchange="onChangeList('yxp_adv')" /><div class="clear"></div></li>
+                                <li><span>声音文件：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_22" onchange="onChangeList('yxp_adv')" /><div class="clear"></div></li>
+                                <li><span>报警屏蔽：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_23" onchange="onChangeList('yxp_adv')" /><div class="clear"></div></li>
+                                <li><span>报警升级周期（分钟）：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_24" onchange="onChangeList('yxp_adv')" /><div class="clear"></div></li>
+                                <li><span>安全时段：</span><input type="text" class="input system_plug_inputs" id="sys_plug_yxp_25" onchange="onChangeList('yxp_adv')" /><div class="clear"></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="system_plug_botton">
+                        <p><button class="btn btns-style-4 advancedSetparm" values="yxp">返回</button></p>
+                    </div>
+                </div>
+            </article>
+
+            <article id="SetParmConf_plug" class="tab-pane animated">
+                <div id="commonlyList_SetParm">
+                    <div class="col-md-4 system_plug_list">
+                        <select id="SetParm_plug_select" class="select system_plug_list_select" onchange="sys_plug_change(this)"></select>
+                        <div class="listStyle system_plug_list_lStyle">
+                            <ul id="treeList_plug_SetParm"></ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8 system_plug_Data">
+                        <div class="listStyle system_plug_Data_ul sys_plug_ul_height_1">
+                            <ul>
+                                <li><span>设备号：</span><b id="sys_plug_SetParm_1"></b><div class="clear"></div></li>
+                                <li><span>设置号：</span><b id="sys_plug_SetParm_2"></b><div class="clear"></div></li>
+                                <li><span>设置名称：</span><input type="text" class="input system_plug_inputs" id="sys_plug_SetParm_3" onchange="onChangeList('SetParm')" /><div class="clear"></div></li>
+                                <li><span>值：</span><input type="text" class="input system_plug_inputs" id="sys_plug_SetParm_4" onchange="onChangeList('SetParm')" /><div class="clear"></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="system_plug_botton">
+                        <!--<p><span>以上配置应用于多个设备，请单击 </span><button class="btn btns-style-4">批量配置</button></p>-->
+                        <p><span>配置更多属性，请单击 </span><button class="btn btns-style-4 advancedSetparm" values="SetParm">高级配置</button></p>
+                    </div>
+                </div>
+                <div id="advancedList_SetParm" style="display:none;">
+                    <div class="col-md-12 system_plug_Data" style="overflow:auto;">
+                        <div class="listStyle advSpan">
+                            <ul>
+                                <li><span>设置类型：</span><input type="text" class="input system_plug_inputs" id="sys_plug_SetParm_5" onchange="onChangeList('SetParm_adv')" /><div class="clear"></div></li>
+                                <li><span>动作：</span><input type="text" class="input system_plug_inputs" id="sys_plug_SetParm_6" onchange="onChangeList('SetParm_adv')" /><div class="clear"></div></li>
+                                <li><span>操作命令：</span><input type="text" class="input system_plug_inputs" id="sys_plug_SetParm_7" onchange="onChangeList('SetParm_adv')" /><div class="clear"></div></li>
+                                <li><span>操作参数：</span><input type="text" class="input system_plug_inputs" id="sys_plug_SetParm_8" onchange="onChangeList('SetParm_adv')" /><div class="clear"></div></li>
+                                <li><span>记录：</span><input type="checkbox" id="sys_plug_SetParm_9" onchange="onChangeList('SetParm_adv')" /><div class="clear"></div></li>
+                                <li><span>是否可以执行：</span><input type="checkbox" id="sys_plug_SetParm_10" onchange="onChangeList('SetParm_adv')" /><div class="clear"></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="system_plug_botton">
+                        <p><button class="btn btns-style-4 advancedSetparm" values="SetParm">返回</button></p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <p class="MessageBox_p3">
+        <button class="btn btns-style-1" id="btnModalSave">确定</button><button class="btn btns-style-1" onclick="onCencel('fullScreenPopup_Config')">取消</button><button class="btn btns-style-1" id="btnModalUsing" disabled="disabled">应用</button>
+    </p>
+</div>

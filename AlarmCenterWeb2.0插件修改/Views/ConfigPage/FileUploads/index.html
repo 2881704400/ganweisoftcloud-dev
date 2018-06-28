@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>上传文件</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/Styles/configPage.css" />
+</head>
+<body>
+    <input type="file" id="fileUpload" multiple />
+    <input type="button" value="上传文件" onclick="upload()" />
+    <div id="upload_text"></div>
+    <div class="explain">
+        <h4>说明</h4>
+        <ul>
+            <li>1、选择文件上传至/FileUpload下</li>
+            <li>2、该示例为多文件上传</li>
+            <li>3、单文件上传请去除input控件的multiple属性</li>
+        </ul>
+    </div>
+    <script src="/Scripts/plug/jquery-1.11.3.min.js"></script>
+    <script src="/Scripts/plug/json2.js"></script>
+    <script>
+        function upload() {
+            var files = $("#fileUpload")[0].files;
+            var formData = new FormData();
+
+            for (var i = 0; i < files.length; i++) {
+                formData.append('file', files[i]);
+            }
+            var ajaxDom = $.ajax({
+                type: 'post',
+                url: '/api/other/upload',
+                headers: {
+                    Authorization: window.localStorage.ac_appkey + '-' + window.localStorage.ac_infokey
+                },
+                data: formData,
+                cache: false,
+                processData: false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
+                contentType: false, // 不设置Content-type请求头
+                beforeSend: function () {
+                    $('#upload_text').html('正在上传...');
+                },
+                success: function (dt) {
+                    console.log(dt);
+                },
+                xhr: function () {
+                    var xhr = $.ajaxSettings.xhr();
+                    if (onprogress && xhr.upload) {
+                        xhr.upload.addEventListener("progress", onprogress, false);
+                        return xhr;
+                    }
+                },
+                error: function () { ajaxDom = null; myApp.closeModal(progressModal); }
+            });
+
+            //上传进度
+            function onprogress(evt) {
+                var loaded = evt.loaded;                  //已经上传大小情况 
+                var tot = evt.total;                      //附件总大小 
+                var per = Math.floor(100 * loaded / tot);     //已经上传的百分比  
+
+                $("#upload_text").html("上传进度：" + per + "%");
+            }
+        }
+    </script>
+</body>
+</html>

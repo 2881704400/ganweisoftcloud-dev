@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>配置Web端权限</title>
+    <link rel="stylesheet" type="text/css" href="/Styles/configPage.css" />
+</head>
+<body>
+    <div>
+        <span>系统功能</span><input id="page_1" type="checkbox" checked="checked" /><br />
+        <span>定制页面</span><input id="page_2" type="checkbox" checked="checked" /><br />
+        <button onclick="onExecute()">确 定</button>
+        <p id="message"></p>
+    </div>
+    <div class="explain">
+        <h4>说明</h4>
+        <ul>
+            <li>1、系统功能：将配置主要页面的访问权限</li>
+            <li>2、定制页面：将配置定制页面的访问权限</li>
+            <li>3、如配置失败，请主动将页面（数据文件路径：/Data/PermissionsConfig.js）权限添加至数据库</li>
+        </ul>
+    </div>
+    <script src="/Scripts/plug/jquery-1.10.1.min.js"></script>
+    <script src="/Scripts/isLogin.js"></script>
+    <script src="/Data/PermissionsConfig.js"></script>
+    <script>
+        function onExecute() {
+            if (document.getElementById("page_1").checked) {
+                ajaxService(0);
+            }
+            if (document.getElementById("page_2").checked) {
+                ajaxService(1);
+            }
+        }
+
+        function ajaxService(d) {
+            var perConfigs = perConfig[d];
+            var perConfigList = "";
+            for (var i = 0; i < perConfigs.page.length; i++) {
+                perConfigList += perConfigs.page[i] + "|";
+            }
+            perConfigList = perConfigList.substring(0, perConfigList.length - 1);
+
+            var urlServer = '';
+            if (perConfigs.id == 1) {
+                urlServer = '/api/permis/add_role_system';
+            }
+            else if (perConfigs.id == 2) {
+                urlServer = '/api/permis/add_role_custom';
+            }
+            $.ajax({
+                type: "post",
+                url: urlServer,
+                headers: {
+                    Authorization: window.localStorage.ac_appkey + '-' + window.localStorage.ac_infokey
+                },
+                data:{
+                    update: perConfigList
+                },
+                success: function (dt) {
+                    if (dt.HttpStatus == 200 && dt.HttpData.code == 200) {
+                        var excuCount = parseInt(dt.HttpData.data);
+                        if (excuCount > 0) {
+                            $("#message").append(perConfigs.title, " 添加权限成功！");
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
