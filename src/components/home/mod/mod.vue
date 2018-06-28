@@ -295,7 +295,7 @@
 		min-height: 827px;
 		height: auto;
 		/*border:1px solid red;*/
-		background: rgb(238, 238, 238);
+		background: #f2f2f5;
 		padding:100px 0;
 		/*text-align: center;*/
 	}
@@ -512,7 +512,7 @@
 			opacity: 1;
 		}
 		.mod .modItem{
-			background: rgb(238,238,238) !important;
+			background: #f2f2f5 !important;
 		}
 		.mod .modItem .modBox{
 			width: 92%;
