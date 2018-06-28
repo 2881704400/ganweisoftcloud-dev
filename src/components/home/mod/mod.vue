@@ -503,14 +503,21 @@
 		-o-transition: all .5s ease;
 	}*/
 	@media screen and (max-width: 768px){
+
 		.mod .modContent .modBox .modPreview{
 				display: none;
 		}
 		.mod .modContent .modBox .modDetail{
 			display: block;
-
 			opacity: 1;
-
+		}
+		.mod .modItem{
+			background: rgb(238,238,238) !important;
+		}
+		.mod .modItem .modBox{
+			width: 92%;
+			left: 4%;
+			border-right: none;
 		}
 	}
 
