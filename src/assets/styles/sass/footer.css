@@ -63,6 +63,14 @@
               font-size: 12px;
               color: #ccc;
               display: block; }
+        .gw-footer .footer-website .website-columns .weixin-img {
+          text-align: center; }
+          .gw-footer .footer-website .website-columns .weixin-img h3 {
+            color: #fff;
+            padding: 0;
+            margin: 0; }
+          .gw-footer .footer-website .website-columns .weixin-img img {
+            width: 100px; }
         .gw-footer .footer-website .website-columns .columns-list {
           width: 18%; }
     .gw-footer .footer-blogroll {

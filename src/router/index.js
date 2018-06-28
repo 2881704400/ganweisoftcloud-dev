@@ -11,6 +11,8 @@ const index = r => require.ensure([], () => r(require('@/components/Index')), 'i
 const headers = r => require.ensure([], () => r(require('@/components/header')), 'page')
 // footer 组件
 const footers = r => require.ensure([], () => r(require('@/components/footer')), 'page')
+// sightspot 组件
+const sightimg = r => require.ensure([], () => r(require('@/components/sightimg/sightimg')), 'page')
 
 Vue.use(Router)
 
@@ -32,6 +34,11 @@ export default new Router({
 					path: '/footers',
 					name: 'footers',
 					component: footers
+				},
+				{
+					path: '/sightimg',
+					name: 'sightimg',
+					component: sightimg
 				}
 			]
 		},

@@ -1,230 +1,251 @@
 @charset "utf-8";
+.bgTranSparent {
+    background: transparent !important;
+}
+
 @media screen and (min-width: 641px) {
     .header {
         width: 100%;
         background: #111; //#435A78
-        .navigation-inner {
-            position: relative;
-            max-width: 1200px;
-            min-width: 320px;
-            margin: 0 auto;
-            font-size: 0;
-            height: 51px;
-            .logo {
-                display: inline-block;
-                vertical-align: middle;
-                margin-right: 8.91%;
-                height: 45px;
-                a {
-                    cursor: pointer;
-                    height: auto;
-                    img {
-                        width: auto;
-                        height: 30px;
-                        line-height: 30px;
-                        position: relative;
-                        top: 10px;
-                    }
-                }
-            }
-            .operation {
+        .header-logo {
+            background: #435A78;
+            .navigation-inner {
+                position: relative;
+                max-width: 1200px;
+                min-width: 320px;
+                margin: 0 auto;
                 font-size: 0;
-                text-align: right;
-                position: absolute;
-                top: 0;
-                right: 0;
-                height: 100%;
-                .login-inner {
+                height: 51px;
+                .logo {
                     display: inline-block;
                     vertical-align: middle;
-                    font-size: 0;
-                    margin-right: 5px;
-                    .login-text {
-                        display: inline-block;
-                        height: 31px;
-                        line-height: 31px;
-                        padding-left: 10px;
-                        padding-right: 10px;
-                        position: relative;
-                        top: 10px;
-                        color: #fff;
-                        font-size: 12px;
-                        border-radius: 2px;
-                        &:hover {
-                            text-decoration: underline;
+                    margin-right: 8.91%;
+                    height: 45px;
+                    a {
+                        cursor: pointer;
+                        height: auto;
+                        img {
+                            width: auto;
+                            height: 30px;
+                            line-height: 30px;
+                            position: relative;
+                            top: 10px;
                         }
                     }
                 }
-                .qc-btn {
-                    display: inline-block;
-                    vertical-align: middle;
-                    color: #fff;
-                    font-size: 14px;
-                    padding: 0 20px;
-                    line-height: 26px;
-                    position: relative;
-                    top: 10px;
-                    overflow: visible;
-                    cursor: pointer;
-                    border: 1px solid #fff;
-                    text-align: center;
-                    border-radius: 2px;
-                    transition: background-color .15s;
-                }
-                .link-mc {
-                    border-color: #fff;
-                    border-color: rgba(255, 255, 255, .2);
-                    font-size: 12px;
-                    &:hover {
-                        background: #1AB394;
+                .operation {
+                    font-size: 0;
+                    text-align: right;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                    .login-inner {
+                        display: inline-block;
+                        vertical-align: middle;
+                        font-size: 0;
+                        margin-right: 5px;
+                        .login-text {
+                            display: inline-block;
+                            height: 30px;
+                            line-height: 30px;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            position: relative;
+                            top: 10px;
+                            color: #fff;
+                            font-size: 12px;
+                            border-radius: 2px;
+                            &:hover {
+                                text-decoration: underline;
+                                background: #111;
+                            }
+                        }
                     }
-                }
-                .phone-inner {
-                    font-size: 14px;
-                    color: #fa7821;
-                    display: inline-block;
-                    vertical-align: middle;
-                    margin-left: 24px;
-                    position: relative;
-                    top: 10px;
-                    i {
-                        color: white;
-                        font-size: 16px;
+                    .qc-btn {
+                        display: inline-block;
+                        vertical-align: middle;
+                        color: #fff;
+                        font-size: 14px;
+                        padding: 0 20px;
+                        line-height: 26px;
                         position: relative;
-                        top: 1px;
+                        top: 10px;
+                        overflow: visible;
+                        cursor: pointer;
+                        border: 1px solid #fff;
+                        text-align: center;
+                        border-radius: 2px;
+                        transition: background-color .15s;
+                    }
+                    .link-mc {
+                        border-color: #fff;
+                        border-color: rgba(255, 255, 255, .2);
+                        font-size: 12px;
+                        &:hover {
+                            background: #1AB394;
+                        }
+                    }
+                    .phone-inner {
+                        font-size: 14px;
+                        color: #fa7821;
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-left: 24px;
+                        position: relative;
+                        top: 10px;
+                        i {
+                            color: white;
+                            font-size: 16px;
+                            position: relative;
+                            top: 1px;
+                        }
                     }
                 }
-            }
-            .menu-btn {
-                display: none;
-                position: absolute;
-                top: 0;
-                right: 10px;
-                height: 100%;
-                i {
-                    display: inline-block;
-                    padding-right: 10px;
-                    width: 37px;
-                    color: white;
-                    font-size: 37px;
-                    cursor: pointer;
+                .menu-btn {
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    right: 10px;
+                    height: 100%;
+                    i {
+                        display: inline-block;
+                        padding-right: 10px;
+                        width: 37px;
+                        color: white;
+                        font-size: 37px;
+                        cursor: pointer;
+                    }
                 }
             }
         }
-        .categories {
-            z-index: 999;
-            position: relative;
-            max-width: 1200px;
-            min-width: 320px;
-            margin: 0px auto;
-            font-size: 0;
-            height: 49px;
-            ul.menu {
+        .header-nav {
+            background: #2E425D;
+            .categories {
+                z-index: 999;
+                position: relative;
+                max-width: 1200px;
+                min-width: 320px;
+                margin: 0px auto;
                 font-size: 0;
-                li {
-                    font-size: 16px;
-                    color: #fff;
-                    display: inline-block;
-                    vertical-align: middle;
-                    position: relative;
-                    list-style: none;
-                }
-                .presentation {
-                    h2 {
-                        font-weight: 400;
-                        margin: 0;
-                        a {
-                            color: #fff;
-                            display: inline-block;
-                            padding: 0 15px;
-                            color: #fff;
-                            line-height: 49px;
-                            font-size: 14px;
-                            -webkit-transition: background-color .4s;
-                            transition: background-color .4s;
-                            outline: 0;
-                        }
-                        i {
-                            position: absolute;
-                            right: 15px;
-                            color: #fff;
-                            font-size: 14px;
-                            top: 0px;
-                            display: none;
-                        }
+                height: 49px;
+                ul.menu {
+                    font-size: 0;
+                    height: 100%;
+                    li {
+                        font-size: 16px;
+                        color: #fff;
+                        display: inline-block;
+                        position: relative;
+                        list-style: none;
+                        height: 100%;
+                        transition: background 0s ease-in 0.1s, color 0s ease-out 0s;
                     }
-                    &:hover {
-                        background: #213045;
-                        color: #179d83;
-                        .menu-list {
-                            display: block;
-                        }
-                        h2 a {
-                            background: #213045;
-                            color: #179d83;
-                        }
-                    }
-                    ul.menu-list {
-                        padding-top: 10px;
-                        padding-bottom: 20px;
-                        font-weight: 300;
-                        text-transform: none;
-                        display: none;
-                        position: absolute;
-                        background-color: #213045;
-                        /* background-color: rgba(17,17,17,.95); */
-                        left: 0;
-                        min-width: 100%;
-                        box-sizing: border-box;
-                        text-align: left;
-                        /* z-index: 100; */
-                        &>li {
+                    .presentation {
+                        h2 {
                             font-weight: 400;
-                            display: block;
-                            padding: 0 40px 0 25px;
-                            line-height: 40px;
-                            list-style: none;
-                            width: auto;
-                            position: relative;
-                            &>a {
+                            margin: 0;
+                            a {
+                                color: #fff;
+                                display: inline-block;
+                                vertical-align: middle;
+                                padding: 0 15px;
                                 color: #fff;
                                 font-size: 14px;
-                                white-space: nowrap;
-                                line-height: 30px;
-                                &:hover {
-                                    color: #179d83;
-                                }
+                                -webkit-transition: background-color .4s;
+                                transition: background-color .4s;
+                                outline: 0;
                             }
-                            &>i {
+                            i {
                                 position: absolute;
-                                right: 10px;
+                                right: 15px;
                                 color: #fff;
                                 font-size: 14px;
                                 top: 0px;
                                 display: none;
                             }
-                            ul.second-menu {
-                                margin: 0;
-                                padding: 0;
-                                li {
-                                    padding-right: 10px;
-                                    a {
-                                        i {
-                                            clear: both;
-                                            font-size: 16px;
-                                            color: #fff;
-                                            padding: 0px 10px 0px 15px;
-                                        }
-                                        span {
-                                            color: #ddd;
-                                            font-size: 14px;
-                                        }
-                                    }
+                        }
+                        &:hover {
+                            background: #213045;
+                            color: #179d83;
+                            .menu-list {
+                                display: block;
+                            }
+                            h2 a {
+                                //                              background: #213045;
+                                color: #179d83;
+                            }
+                        }
+                        ul.menu-list {
+                            margin-top: 2px;
+                            padding-top: 10px;
+                            padding-bottom: 20px;
+                            display: none;
+                            position: absolute;
+                            background-color: #213045;
+                            left: 0;
+                            min-width: 100%;
+                            box-sizing: border-box;
+                            text-align: left;
+                            /* z-index: 100; */
+                            &>li {
+                                font-weight: 400;
+                                display: block;
+                                padding: 0 40px 0 25px;
+                                line-height: 40px;
+                                list-style: none;
+                                width: auto;
+                                position: relative;
+                                &>a {
+                                    color: #fff;
+                                    font-size: 14px;
+                                    white-space: nowrap;
+                                    line-height: 30px;
                                     &:hover {
-                                        a span {
-                                            color: #179d83;
+                                        color: #179d83;
+                                    }
+                                }
+                                &>i {
+                                    position: absolute;
+                                    right: 10px;
+                                    color: #fff;
+                                    font-size: 14px;
+                                    top: 0px;
+                                    display: none;
+                                }
+                                ul.second-menu {
+                                    margin: 0;
+                                    padding: 0;
+                                    li {
+                                        width: 100%;
+                                        a {
+                                            i {
+                                                clear: both;
+                                                font-size: 16px;
+                                                color: #fff;
+                                                padding: 0px 10px 0px 15px;
+                                            }
+                                            span {
+                                                color: #ddd;
+                                                font-size: 14px;
+                                            }
+                                        }
+                                        &:hover {
+                                            background: #16212F;
+                                            a span {
+                                                color: #179d83;
+                                            }
                                         }
                                     }
+                                }
+                            }
+                        }
+                        .onemenu-list {
+                            padding: 0 10px;
+                            &>li {
+                                padding: 0px 20px !important;
+                                &:hover {
+                                    background: #16212F;
                                 }
                             }
                         }
@@ -453,7 +474,7 @@
                     font-size: 15px;
                 }
             }
-            .login-mobile{
+            .login-mobile {
                 text-align: center;
                 height: 80px;
                 padding-top: 25px;
