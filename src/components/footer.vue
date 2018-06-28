@@ -56,11 +56,15 @@
 						</li>
 					</ul>
 				</div>
-				<div class="columns column-img">
+				<!--<div class="columns column-img">
 					<div class="columns-logo">
 						<img src="../assets/img/head_logo.png" />
 						<a href="#">立即注册</a>
 					</div>
+				</div>-->
+				<div class="columns column-img weixin-img">
+					<h3>关注微信公众号</h3>
+					<img src="../assets/img/contact1.jpg" />
 				</div>
 				<div class="operation-mobile">
 					<a href="#" class="qc-btn link-mc"><span>开发者后台</span></a>
@@ -95,7 +99,7 @@
 			this.clientHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 			if(this.clientWidth > 640) {
 				this.isShow = 999;
-			}console.log(this.isShow)
+			}
 		},
 		methods: {
 			openUlList(num) {
