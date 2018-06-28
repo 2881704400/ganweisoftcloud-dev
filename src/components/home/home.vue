@@ -1,24 +1,30 @@
 <template>
 	<div class="layout">
 		<!--<loadding></loadding>-->
-		<navigation></navigation>
+		<!-- <navigation></navigation> -->
 		<carousel></carousel>
 		<card></card>
+		<mod></mod>
 		<imgbox></imgbox>
-		<steps></steps>
-		<footerVue></footerVue>
+		<foSwiper></foSwiper>
+		<example></example>
+		<!-- <steps></steps> -->
+		<!-- <footerVue></footerVue> -->
 	</div>
 </template>
 
 <script>
-	import navigation from './navigation/navigation'
+	// import navigation from './navigation/navigation'
 	import carousel from './carousel/carousel'
 	import card from './card/card'
+	import mod from './mod/mod'
 	import imgbox from './box/box'
-	import footer from './footer/footer'
-	import steps from './steps/steps'
-	import footerVue from '../footer/footer'
-	import loadding from '../loading'
+	import foSwiper from './swiper/footerSwipers'
+	import example from './example/example'
+	// import footer from './footer/footer'
+	// import steps from './steps/steps'
+	// import footerVue from '../footer/footer'
+	// import loadding from '../loading'
 	
 	export default {
 		name: 'home',
@@ -28,14 +34,17 @@
 			}
 		},
 		components:{
-			navigation,
+			// navigation,
 			carousel,
 			card,
 			imgbox,
-			footer,
-			steps,
-			footerVue,
-			loadding
+			foSwiper,
+			example,
+			mod
+			// footer,
+			// steps,
+			// footerVue,
+			// loadding
 		}
 	}
 </script>
