@@ -11,7 +11,7 @@
 				<div class="demo-carousel"><img src="../../../assets/home/banner2.png" /></div>
 			</CarouselItem>
 			<CarouselItem>
-				<div class="demo-carousel"><img src="../../../assets/home/banner3.png" /></div>
+				<div class="demo-carousel"><img src="../../../assets/home/banner3.jpg" /></div>
 			</CarouselItem>
 		</Carousel>
 	</div>
