@@ -3,8 +3,10 @@
 		<headers></headers>
 		<carousel></carousel>
 		<card></card>
+		<mod></mod>
 		<imgbox></imgbox>
-		<steps></steps>
+		<foSwiper></foSwiper>
+		<example></example>
 		<footers></footers>
 	</div>
 </template>
@@ -14,12 +16,12 @@
 	import headers from '@/components/header'
 	//引入尾部组件
 	import footers from '@/components/footer'
-	import navigation from './home/navigation/navigation'
-	import carousel from './home/carousel/carousel'
-	import card from './home/card/card'
-	import imgbox from './home/box/box'
-	import footer from './footer/footer'
-	import steps from './home/steps/steps'
+	import carousel from '@/components/home/carousel/carousel'
+	import card from '@/components/home/card/card'
+	import mod from '@/components/home/mod/mod'
+	import imgbox from '@/components/home/box/box'
+	import foSwiper from '@/components/home/swiper/footerSwipers'
+	import example from '@/components/home/example/example'
 
 	export default {
 		name: 'index',
@@ -31,12 +33,12 @@
 		components: {
 			headers,
 			footers,
-			navigation,
 			carousel,
 			card,
 			imgbox,
-			footer,
-			steps
+			foSwiper,
+			example,
+			mod
 		}
 	}
 </script>
