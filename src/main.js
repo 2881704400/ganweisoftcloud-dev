@@ -12,6 +12,8 @@ import 'jquery';
 import 'iview/dist/styles/iview.css';
 import '../src/css/animate.min.css';
 import '../src/css/commons.css';
+import Swiper from 'swiper';
+import 'swiper/dist/css/swiper.min.css'
 
 Vue.use(iView);
 
@@ -29,19 +31,19 @@ new Vue({
     this.checkLogin();
   },
   methods:{
-  	checkLogin() {
-  		try{
-  			if (window.localStorage.userName != "" && window.localStorage.userName != null && window.localStorage.userName != undefined) {
+    checkLogin() {
+      try{
+        if (window.localStorage.userName != "" && window.localStorage.userName != null && window.localStorage.userName != undefined) {
           // this.$router.push('/index');
           this.$router.push({ name: "home" });
         } else {
           this.$router.push({ name: "home" });
         }
-  		}catch(e){
-  			//TODO handle the exception
-  			this.$router.push({ name: "navigation" });
-  		}
-  		
-  	}
+      }catch(e){
+        //TODO handle the exception
+        this.$router.push({ name: "navigation" });
+      }
+      
+    }
   }
 })
