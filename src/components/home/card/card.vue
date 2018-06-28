@@ -73,6 +73,7 @@
 
 
 <style>
+
 	.layout-row-box {
 		width:80%;
 		/*height: 270px;*/
@@ -82,7 +83,7 @@
 		margin:0 auto;
 	}
 	.listItem{
-		width: 100%;border:0;
+		width: 100%;border-top: 0!important;border-bottom: 0!important;border-left: 0!important;
 		border-right: 1px solid #dbdbdb !important;
 		border-radius: 0;
 		text-align: center;
