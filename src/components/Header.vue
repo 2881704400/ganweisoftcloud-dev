@@ -37,7 +37,7 @@
 										<a href="#"><i class="iconfont icon-web-dianhua"></i><span>人脸识别</span></a>
 									</li>
 									<li>
-										<a href="#"><i class="iconfont icon-unfold"></i><span>位置服务</span></a>
+										<a href="#"><i class="iconfont icon-fengdian"></i><span>位置服务</span></a>
 									</li>
 								</ul>
 							</li>
@@ -46,10 +46,10 @@
 								<i class="iconfont icon-unfold"></i>
 								<ul class="second-menu" v-show="isSecond==2||isSecond==999">
 									<li>
-										<a href="#"><i class="iconfont icon-web-dianhua"></i><span>多点触控</span></a>
+										<a href="#"><i class="iconfont icon-dashuju"></i><span>多点触控</span></a>
 									</li>
 									<li>
-										<a href="#"><i class="iconfont icon-web-dianhua"></i><span>虚拟现实</span></a>
+										<a href="#"><i class="iconfont icon-atom"></i><span>虚拟现实</span></a>
 									</li>
 								</ul>
 							</li>
@@ -58,10 +58,10 @@
 								<i class="iconfont icon-unfold"></i>
 								<ul class="second-menu" v-show="isSecond==3||isSecond==999">
 									<li>
-										<a href="#"><i class="iconfont icon-web-dianhua"></i><span>自然语音</span></a>
+										<a href="#"><i class="iconfont icon-anquan"></i><span>自然语音</span></a>
 									</li>
 									<li>
-										<a href="#"><i class="iconfont icon-web-dianhua"></i><span>远距体感</span></a>
+										<a href="#"><i class="iconfont icon-babiao"></i><span>远距体感</span></a>
 									</li>
 								</ul>
 							</li>
@@ -70,10 +70,10 @@
 								<i class="iconfont icon-unfold"></i>
 								<ul class="second-menu" v-show="isSecond==4||isSecond==999">
 									<li>
-										<a href="#"><i class="iconfont icon-web-dianhua"></i><span>虚拟现实</span></a>
+										<a href="#"><i class="iconfont icon-icontubiao"></i><span>虚拟现实</span></a>
 									</li>
 									<li>
-										<a href="#"><i class="iconfont icon-web-dianhua"></i><span>城市大脑</span></a>
+										<a href="#"><i class="iconfont icon-yingyong"></i><span>城市大脑</span></a>
 									</li>
 								</ul>
 							</li>
