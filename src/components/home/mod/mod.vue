@@ -237,8 +237,8 @@
 
 			showDet:function($event){
 				var width=$(document).width();
-				
-				if(width>768){
+				var currentBoxWidth=$event.target.parentNode.style.width;
+				if(width>768&&currentBoxWidth!="31%"){
 					var html=$event.target.parentNode;
 					$(html).find(".modBox").addClass('bodColor');
 					$(html).siblings().find(".modBox").removeClass('bodColor');
@@ -248,28 +248,28 @@
 					$(html).animate({
 						width:"31%"
 						},
-						200, function() {
+						10, function() {
 						
 					}).find(".modBox").animate({
 						height: "520px",
 						top: "-20px"},
-						200, function() {
+						300, function() {
 					});
-
 					$(html).siblings().animate({
 						width:"23%"
 						},
-						200, function() {
+						0, function() {
 					}).find(".modBox").animate({
 						height: "100%",
-						top: "0"},
-						200, function() {
+						top: "0px"},
+						0, function() {
 					});
 
 
 					$(html).siblings().find(".modDetail").hide();
 					$(html).siblings().find(".modPreview").fadeIn(200);
 				}
+
 				
 
 			},showPre(){}

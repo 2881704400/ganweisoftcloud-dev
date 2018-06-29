@@ -248,6 +248,11 @@
 		-webkit-transition: all .5s ease;
 		-o-transition: all .5s ease;
 	}
+	.itemLink:hover{
+		background: #fff;
+		color: rgb(36,172,141);
+
+	}
 	@media screen and (max-width: 768px){
 		.footerSwiper{
 			padding-bottom: 20px;
