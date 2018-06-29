@@ -231,44 +231,43 @@
 	export default{
 		data(){
 			return{
-
+				
 			}
 		},methods: {
 
 			showDet:function($event){
 				var width=$(document).width();
-				
-				if(width>768){
+				var currentBoxWidth=$event.target.parentNode.style.width;
+				if(width>768&&currentBoxWidth!="31%"){
 					var html=$event.target.parentNode;
 					$(html).find(".modBox").addClass('bodColor');
 					$(html).siblings().find(".modBox").removeClass('bodColor');
 					$(html).find(".modPreview").hide();
-					$(html).find(".modDetail").fadeIn(200);
+					$(html).find(".modDetail").show();
 
-					$(html).animate({
+					$(html).stop().animate({
 						width:"31%"
 						},
-						200, function() {
+						10, function() {
 						
-					}).find(".modBox").animate({
+					}).find(".modBox").stop().animate({
 						height: "520px",
 						top: "-20px"},
-						200, function() {
+						300, function() {
 					});
-
-					$(html).siblings().animate({
+					$(html).siblings().stop().animate({
 						width:"23%"
 						},
-						200, function() {
-					}).find(".modBox").animate({
+						10, function() {
+					}).find(".modBox").stop().animate({
 						height: "100%",
-						top: "0"},
-						200, function() {
+						top: "0px"},
+						10, function() {
 					});
 
 
 					$(html).siblings().find(".modDetail").hide();
-					$(html).siblings().find(".modPreview").fadeIn(200);
+					$(html).siblings().find(".modPreview").show();
 				}
 				
 
@@ -328,6 +327,7 @@
 	.mod .modContent .modItem{
 		height: 100%;
 		background:#fff;
+		z-index: 1;
 	}
 	.mod .modContent .modBox{
 		border-top: 4px solid #d9d9d9;
@@ -341,6 +341,8 @@
 		right: 0;
 		width: 100%;
 		height: 100%;
+		z-index: 999;
+		transition: all 0s cubic-bezier(.4,0,.2,1),z-index 0s .12s;
 	}
 
 
