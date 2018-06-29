@@ -269,6 +269,7 @@
 					$(html).siblings().find(".modDetail").hide();
 					$(html).siblings().find(".modPreview").show();
 				}
+
 				
 
 			},showPre(){}
