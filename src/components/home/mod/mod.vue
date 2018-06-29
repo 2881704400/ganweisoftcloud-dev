@@ -295,7 +295,7 @@
 		min-height: 827px;
 		height: auto;
 		/*border:1px solid red;*/
-		background: rgb(238, 238, 238);
+		background: #f2f2f5;
 		padding:100px 0;
 		/*text-align: center;*/
 	}
@@ -503,14 +503,21 @@
 		-o-transition: all .5s ease;
 	}*/
 	@media screen and (max-width: 768px){
+
 		.mod .modContent .modBox .modPreview{
 				display: none;
 		}
 		.mod .modContent .modBox .modDetail{
 			display: block;
-
 			opacity: 1;
-
+		}
+		.mod .modItem{
+			background: #f2f2f5 !important;
+		}
+		.mod .modItem .modBox{
+			width: 92%;
+			left: 4%;
+			border-right: none;
 		}
 	}
 

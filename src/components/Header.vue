@@ -10,7 +10,7 @@
 					<div class="login-inner">
 						<a href="#" class="login-text">登录</a>
 					</div>
-					<a href="#" class="qc-btn link-mc"><span>开发者后台</span></a>
+					<a href="#" class="qc-btn link-mc" @click="loginPage"><span>开发者后台</span></a>
 					<p class="phone-inner">
 						<i class="iconfont icon-web-dianhua"></i> 0755-82047841
 					</p>
@@ -130,7 +130,7 @@
 					</li>
 				</ul>
 				<div class="operation-mobile">
-					<a href="#" class="qc-btn link-mc"><span>开发者后台</span></a>
+					<a href="#" class="qc-btn link-mc" @click="loginPage"><span>开发者后台</span></a>
 				</div>
 				<div class="login-mobile">
 					<a href="#">登录</a>
@@ -194,7 +194,33 @@
 				} else {
 					this.isSecond = 999;
 				}
-			}
+			},
+			loginPage(){
+				var sUserAgent = navigator.userAgent.toLowerCase();
+				var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+				var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+				var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+				var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+				var bIsAndroid = sUserAgent.match(/android/i) == "android";
+				var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+				if (bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsWM) {
+					try{
+						window.location.href = "/Views/login.html";
+					}
+					catch (ex) {
+						window.location.href = "/Views/login.html";
+					}
+					
+				} else {
+					try {
+						window.location.href = "/Views/Home/index.html";
+					}
+					catch (ex) {
+						window.location.href = "/Views/Home/index.html";
+					}
+				}
+				return;
+			},
 		}
 	}
 </script>

@@ -83,7 +83,7 @@
 		},mounted(){
 			$(".layout-main-box").each(function(i){
 				if(i%2==1){
-					$(this).css({"background":"#eee"})
+					$(this).css({"background":"#f2f2f5"})
 				}
 			})
 		}

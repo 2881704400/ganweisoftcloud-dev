@@ -133,7 +133,7 @@
 		-o-transition: all .2s linear;
 	}
 	.example .itemWrap{
-		padding-top: 30px;
+		padding:15px 0px;
 		border:1px solid #bdbdbd;
 		box-sizing: border-box;
 		-moz-box-shadow:0px 0px 0px #eee, 0px 0px 0px #eee; 
@@ -145,7 +145,7 @@
 
 	.example .itemWrap img{
 		display: block;
-		margin:0 auto 15px;
+		margin:0 auto ;
 		max-width: 100%;
 		height: auto;
 	}
