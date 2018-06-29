@@ -12,7 +12,7 @@
 					</div>
 					<a href="#" class="qc-btn link-mc" @click="loginPage"><span>开发者后台</span></a>
 					<p class="phone-inner">
-						<i class="iconfont icon-web-dianhua"></i> 0755-82047841
+						<i class="iconfont icon-web-dianhua"></i> 400-666-8916
 					</p>
 				</div>
 				<div class="menu-btn" @click="openMenu()">
