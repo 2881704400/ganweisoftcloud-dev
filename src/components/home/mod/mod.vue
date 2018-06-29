@@ -243,32 +243,33 @@
 					$(html).find(".modBox").addClass('bodColor');
 					$(html).siblings().find(".modBox").removeClass('bodColor');
 					$(html).find(".modPreview").hide();
-					$(html).find(".modDetail").fadeIn(200);
+					$(html).find(".modDetail").show();
 
-					$(html).animate({
+					$(html).stop().animate({
 						width:"31%"
 						},
 						10, function() {
 						
-					}).find(".modBox").animate({
+					}).find(".modBox").stop().animate({
 						height: "520px",
 						top: "-20px"},
 						300, function() {
 					});
-					$(html).siblings().animate({
+					$(html).siblings().stop().animate({
 						width:"23%"
 						},
-						0, function() {
-					}).find(".modBox").animate({
+						10, function() {
+					}).find(".modBox").stop().animate({
 						height: "100%",
 						top: "0px"},
-						0, function() {
+						10, function() {
 					});
 
 
 					$(html).siblings().find(".modDetail").hide();
-					$(html).siblings().find(".modPreview").fadeIn(200);
+					$(html).siblings().find(".modPreview").show();
 				}
+
 
 				
 
