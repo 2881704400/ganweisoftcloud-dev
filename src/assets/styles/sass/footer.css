@@ -107,7 +107,8 @@
           text-overflow: ellipsis;
           line-height: 45px;
           position: relative;
-          border-bottom: 1px solid #393C40; }
+          border-bottom: 1px solid #393C40;
+          cursor: pointer; }
           .gw-footer .footer-website .website-columns .columns h3 {
             font-size: 14px;
             color: #fff;
