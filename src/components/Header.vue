@@ -28,11 +28,11 @@
 					</li>
 					<li class="presentation">
 						<h2 @click="openMenuList(1)"><a href="#">产品</a><i class="iconfont icon-unfold"></i></h2>
-						<ul class="menu-list" v-show="isFirst==1||isFirst==999">
-							<li @click="openSecMenuList(1)">
+						<ul class="menu-list twomemu-list" v-show="isFirst==1||isFirst==999">
+							<li @click="openSecMenuList(0)">
 								<a href="#">连接——开放物联</a>
 								<i class="iconfont icon-unfold"></i>
-								<ul class="second-menu" v-show="isSecond==1||isSecond==999">
+								<ul class="second-menu" v-show="isSecond==0||isSecond==999">
 									<li>
 										<a href="#"><i class="iconfont icon-web-dianhua"></i><span>人脸识别</span></a>
 									</li>
@@ -41,10 +41,10 @@
 									</li>
 								</ul>
 							</li>
-							<li @click="openSecMenuList(2)">
+							<li @click="openSecMenuList(1)">
 								<a href="#">计算——可靠平台</a>
 								<i class="iconfont icon-unfold"></i>
-								<ul class="second-menu" v-show="isSecond==2||isSecond==999">
+								<ul class="second-menu" v-show="isSecond==1||isSecond==999">
 									<li>
 										<a href="#"><i class="iconfont icon-dashuju"></i><span>多点触控</span></a>
 									</li>
@@ -53,10 +53,10 @@
 									</li>
 								</ul>
 							</li>
-							<li @click="openSecMenuList(3)">
+							<li @click="openSecMenuList(2)">
 								<a href="#">应用——共赢生态</a>
 								<i class="iconfont icon-unfold"></i>
-								<ul class="second-menu" v-show="isSecond==3||isSecond==999">
+								<ul class="second-menu" v-show="isSecond==2||isSecond==999">
 									<li>
 										<a href="#"><i class="iconfont icon-anquan"></i><span>自然语音</span></a>
 									</li>
@@ -65,10 +65,10 @@
 									</li>
 								</ul>
 							</li>
-							<li @click="openSecMenuList(4)">
+							<li @click="openSecMenuList(3)">
 								<a href="#">创新——赋能智造</a>
 								<i class="iconfont icon-unfold"></i>
-								<ul class="second-menu" v-show="isSecond==4||isSecond==999">
+								<ul class="second-menu" v-show="isSecond==3||isSecond==999">
 									<li>
 										<a href="#"><i class="iconfont icon-icontubiao"></i><span>虚拟现实</span></a>
 									</li>
@@ -115,8 +115,8 @@
 						<h2><a href="#">文档支持</a></h2>
 					</li>
 					<li class="presentation">
-						<h2 @click="openMenuList(3)"><a href="#">关于我们</a><i class="iconfont icon-unfold"></i></h2>
-						<ul class="menu-list onemenu-list" v-show="isFirst==3||isFirst==999">
+						<h2 @click="openMenuList(5)"><a href="#">关于我们</a><i class="iconfont icon-unfold"></i></h2>
+						<ul class="menu-list onemenu-list" v-show="isFirst==5||isFirst==999">
 							<li>
 								<a href="#">公司简介</a>
 							</li>
@@ -174,7 +174,6 @@
 			},
 			openMenuList(num) {
 				if(this.clientWidth > 0 && this.clientWidth < 641) {
-					console.log(num)
 					if(this.isFirst == num) {
 						this.isFirst = -1;
 					} else {
@@ -183,6 +182,21 @@
 				} else {
 					this.isFirst = 999;
 				}
+				var nowClass=$(".menu>.presentation").eq(num).find("h2>i").attr("class");console.log(nowClass)
+				if(nowClass.indexOf("icon-unfold")>-1){
+					$(".menu>.presentation").eq(num).find("h2>i").removeClass("icon-unfold");
+					$(".menu>.presentation").eq(num).find("h2>i").addClass("icon-packup");
+				}else{
+					$(".menu>.presentation").eq(num).find("h2>i").removeClass("icon-packup");
+					$(".menu>.presentation").eq(num).find("h2>i").addClass("icon-unfold");
+				}
+				/*if(nowClass.indexOf("icon-unfold")>-1){
+					$(".menu-list>li>i").removeClass("icon-unfold");
+					$(".menu-list>li>i").addClass("icon-packup");
+				}else{
+					$(".menu-list>li>i").removeClass("icon-unfold");
+					$(".menu-list>li>i").addClass("icon-packup");
+				}*/
 			},
 			openSecMenuList(num) {
 				if(this.clientWidth > 0 && this.clientWidth < 641) {
@@ -194,6 +208,21 @@
 				} else {
 					this.isSecond = 999;
 				}
+				var nowClass=$(".twomemu-list>li").eq(num).find("i").eq(0).attr("class");console.log(nowClass)
+				if(nowClass.indexOf("icon-unfold")>-1){
+					$(".twomemu-list>li").eq(num).find("i").eq(0).removeClass("icon-unfold");
+					$(".twomemu-list>li").eq(num).find("i").eq(0).addClass("icon-packup");
+				}else{
+					$(".twomemu-list>li").eq(num).find("i").eq(0).removeClass("icon-packup");
+					$(".twomemu-list>li").eq(num).find("i").eq(0).addClass("icon-unfold");
+				}
+				/*if(nowClass.indexOf("icon-unfold")>-1){
+					$(".menu-list>li>i").removeClass("icon-unfold");
+					$(".menu-list>li>i").addClass("icon-packup");
+				}else{
+					$(".menu-list>li>i").removeClass("icon-unfold");
+					$(".menu-list>li>i").addClass("icon-packup");
+				}*/
 			},
 			loginPage(){
 				var sUserAgent = navigator.userAgent.toLowerCase();

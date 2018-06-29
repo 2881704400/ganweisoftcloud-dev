@@ -172,7 +172,6 @@
                                 display: block;
                             }
                             h2 a {
-                                //                              background: #213045;
                                 color: #179d83;
                             }
                         }
@@ -247,7 +246,7 @@
                                 cursor: pointer;
                                 &:hover {
                                     background: #16212F;
-                                    a{
+                                    a {
                                         color: #179d83;
                                     }
                                 }
@@ -424,7 +423,7 @@
                             font-size: 14px;
                             white-space: nowrap;
                             line-height: 30px;
-                            &:hover {
+                            &:active {
                                 color: #179d83;
                             }
                         }
@@ -453,9 +452,12 @@
                                         font-size: 14px;
                                     }
                                 }
-                                &:hover {
-                                    a span {
-                                        color: #179d83;
+                                &:active {
+                                    &>a {
+                                        span,
+                                        i {
+                                            color: #179d83;
+                                        }
                                     }
                                 }
                             }
