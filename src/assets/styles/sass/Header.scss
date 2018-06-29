@@ -231,8 +231,11 @@
                                         }
                                         &:hover {
                                             background: #16212F;
-                                            a span {
-                                                color: #179d83;
+                                            &>a {
+                                                span,
+                                                i {
+                                                    color: #179d83;
+                                                }
                                             }
                                         }
                                     }
