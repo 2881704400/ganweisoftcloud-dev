@@ -244,8 +244,12 @@
                             padding: 0 10px;
                             &>li {
                                 padding: 0px 20px !important;
+                                cursor: pointer;
                                 &:hover {
                                     background: #16212F;
+                                    a{
+                                        color: #179d83;
+                                    }
                                 }
                             }
                         }
