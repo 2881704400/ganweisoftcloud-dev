@@ -11,7 +11,7 @@
 		        			<div class="bg"></div>
 		        			<div class="content">
 		        				<div class="itemImgPanel">
-		        					<i class="icon iconfont icon-gongdi"></i>
+		        					<i class="icon iconfont icon-zhihuigongdi1"></i>
 		        				</div>
 		        				<h3 class="itemTitle">智慧工地</h3>
 		        				<p class="itemDesc">

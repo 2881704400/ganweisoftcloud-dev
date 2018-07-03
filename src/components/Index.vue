@@ -3,9 +3,12 @@
 		<headers :isShowbgColor="isShowBg"></headers>
 		<carousel></carousel>
 		<card></card>
+
 		<mod></mod>
+		<imgbox></imgbox>
 		<foSwiper></foSwiper>
 		<example></example>
+
 		<sightimg></sightimg>
 		<footers></footers>
 		<div id="myspot" class="sightspot" v-show="isShowSpot" @click="goAnchor('#sightspotId')" title="回到顶部">

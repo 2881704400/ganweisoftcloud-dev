@@ -7,6 +7,7 @@
 		<mod></mod>
 		<imgbox></imgbox>
 		<foSwiper></foSwiper>
+		
 		<example></example>
 		<!-- <steps></steps> -->
 		<!-- <footerVue></footerVue> -->

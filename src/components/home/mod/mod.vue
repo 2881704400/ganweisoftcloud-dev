@@ -116,7 +116,7 @@
 					<div class="modBox"  @mouseenter="showDet" @mouseleave="showPre">
 						<div class="modPreview">
 							<div class="modPreName">
-								<i class="iconfont icon-babiao"></i>
+								<i class="iconfont icon-bazi"></i>
 								<h3>计算</h3>
 								<p>可靠平台</p>
 							</div>
@@ -136,7 +136,7 @@
 						</div>
 						<div class="modDetail">
 							<div class="modDetailName">
-								<i  class="iconfont icon-babiao"></i>
+								<i  class="iconfont icon-bazi"></i>
 								<h3>计算</h3>
 								<p>提供主流的云计算、云存储和大数据处理能力，使客户能够一键部署、按需使用、灵活配置、降低成本。</p>
 
@@ -245,25 +245,26 @@
 					$(html).find(".modPreview").hide();
 					$(html).find(".modDetail").show();
 
+					$(html).siblings().stop().animate({
+						width:"23%"
+						},
+						100, function() {
+					}).find(".modBox").stop().animate({
+						height: "100%",
+						top: "0px"},
+						100, function() {
+					});
 					$(html).stop().animate({
 						width:"31%"
 						},
-						10, function() {
+						100, function() {
 						
 					}).find(".modBox").stop().animate({
 						height: "520px",
 						top: "-20px"},
 						300, function() {
 					});
-					$(html).siblings().stop().animate({
-						width:"23%"
-						},
-						10, function() {
-					}).find(".modBox").stop().animate({
-						height: "100%",
-						top: "0px"},
-						10, function() {
-					});
+					
 
 
 					$(html).siblings().find(".modDetail").hide();
