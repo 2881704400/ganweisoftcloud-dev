@@ -2,16 +2,16 @@
 	<div class="layout-content">
 		<Carousel v-model="value1" :autoplay="setting.autoplay" :autoplay-speed="setting.autoplaySpeed" :dots="setting.dots" :radius-dot="setting.radiusDot" :trigger="setting.trigger" :arrow="setting.arrow">
 			<CarouselItem>
-				<div class="demo-carousel"><img src="../../../assets/home/banner0.png" /></div>
-			</CarouselItem>
-			<CarouselItem>
 				<div class="demo-carousel"><img src="../../../assets/home/banner1.png" /></div>
 			</CarouselItem>
 			<CarouselItem>
 				<div class="demo-carousel"><img src="../../../assets/home/banner2.png" /></div>
 			</CarouselItem>
 			<CarouselItem>
-				<div class="demo-carousel"><img src="../../../assets/home/banner3.jpg" /></div>
+				<div class="demo-carousel"><img src="../../../assets/home/banner3.png" /></div>
+			</CarouselItem>
+			<CarouselItem>
+				<div class="demo-carousel"><img src="../../../assets/home/banner0.png" /></div>
 			</CarouselItem>
 		</Carousel>
 	</div>
@@ -28,7 +28,8 @@
 					dots: 'inside',
 					radiusDot: false,
 					trigger: 'hover',
-					arrow: 'always'
+					arrow: 'always',
+					loop:true
 				}
 			}
 		}
