@@ -197,7 +197,7 @@
 		margin: 0;
 		padding: 0;
 		margin-top: 24px;
-		font-weight: bold;
+		font-weight: normal;
 	}
 	.swiper-slide .mask .itemDesc{
 		font-size: 14px;
