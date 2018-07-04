@@ -54,7 +54,7 @@
 
 <style >
 	.layout-content {
-		min-height: 200px;
+		/*min-height: 200px;*/
 		height: auto;
 		/*margin: 15px;*/
 		overflow: hidden;

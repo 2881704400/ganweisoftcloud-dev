@@ -11,7 +11,7 @@
 
 			<Row class="modContent">
 				<Col class="modItem modItemOne" :lg="6" :md="6" :sm="12" :xs="24" >
-					<div class="modBox modBoxOne" >
+					<div class="modBox modBoxOne"  @mouseenter="aa" >
 						<div class="modPreview modPreviewOne">
 							<div class="modPreName">
 								<i class="iconfont icon-dengpao" ></i>
@@ -67,7 +67,7 @@
 					
 				</Col>
 				<Col class="modItem" :lg="6" :md="6" :sm="12" :xs="24" ref="aaa">
-					<div class="modBox" >
+					<div class="modBox"  @mouseenter="aa" >
 						<div class="modPreview">
 							<div class="modPreName">
 								<i class="iconfont icon-yingyong"></i>
@@ -113,7 +113,7 @@
 					</div>
 				</Col>
 				<Col class="modItem" :lg="6" :md="6" :sm="12" :xs="24" >
-					<div class="modBox" >
+					<div class="modBox"  @mouseenter="aa" >
 						<div class="modPreview">
 							<div class="modPreName">
 								<i class="iconfont icon-bazi"></i>
@@ -168,7 +168,7 @@
 					</div>
 				</Col>
 				<Col class="modItem" :lg="6" :md="6" :sm="12" :xs="24" >
-					<div class="modBox">
+					<div class="modBox" @mouseenter="aa" >
 						<div class="modPreview">
 							<div class="modPreName">
 								<i class="iconfont icon-Share"></i>
@@ -230,23 +230,58 @@
 <script>
 	
 	export default{
-		// methods:{
-		// 	aa:function($event){
-		// 		// var html=$event.target;
-		// 		// $(html).addClass('bodColor');
-		// 		// console.log($event);
-		// 		// console.log(2);
-		// 	},bb:function($event){
-		// 		var html=$event.target;
-		// 		$(html).parent().css({"width":"31%"});
-		// 		$(html).css({"height":"520px","top":"-20px"})
-		// 		$(html).parent().siblings().css({"width":"23%"}).find(".modBox").css({"height":"100%","top":"0px"})
+		methods:{
+			aa:function($event){
+				var width=$(document).width()
+				if(width>768){
+					var htm=$(".modItem:eq(0)");
+					$(htm).find(".modBox").removeClass('bodColor');
+					var html=$event.target;
 
-		// 		// $(html).css({"top":"-20px"})
-		// 		// console.log(2222);
-		// 	}
-		// }
-		
+					$(html).parent().css({"width":"31%","transition":"all 0.5s ease"});
+					$(html).find(".modPreview").hide();
+					$(html).find(".modDetail").show();
+					$(html).css({
+						"height":"520px",
+						"top":"-20px",
+						"borderTop":"4px solid #408abf",
+						"borderRight":"1px solid #408abf",
+						"borderBottom":"1px solid #408abf",
+						"borderLeft":"1px solid #408abf",
+						"transition":"all 0.5s ease"
+					});
+
+
+					$(html).parent().siblings().find(".modPreview").show();
+					$(html).parent().siblings().find(".modDetail").hide();
+					$(html).parent().siblings().css({
+						"width":"23%",
+						"transition":"all 0.5s ease"
+					}).find(".modBox").css({
+						"height":"100%",
+						"top":"0px",
+						"borderTop":"4px solid #d9d9d9",
+						"borderRight":"1px solid #d9d9d9",
+						"borderBottom":"none",
+						"borderLeft":"none",
+						"transition":"all 0.5s ease",
+					});
+				}
+				
+
+				
+			}
+		},mounted(){
+			var width=$(document).width()
+			// console.log(width);
+			if(width>768){
+				var html=$(".modItem:eq(0)");
+				$(html).find(".modPreview").hide().siblings('.modDetail').show();
+				$(html).siblings().css({"width":"23%"});
+				$(html).css({"width":"31%"}).find(".modBox").addClass('bodColor').css({"height":"520px","top":"-20px"});
+			}
+			
+		}
 	}
 </script>
 <!-- d9d9d9 -->
@@ -506,82 +541,7 @@
 		
 
 	}
-	@media screen and (min-width: 1024px){
-	.mod .modContent .modBoxOne{
-		border-top: 4px solid #408abf ;
-		border-right: 1px solid #408abf ;
-		border-left: 1px solid #408abf ;
-		border-bottom: 1px solid #408abf ;
-		box-sizing: border-box;
-		background: #fff;
-		top: -20px;
-		height: 520px;
-	}
-	.mod .modContent .modItem{
-		/*height: 100%;
-		background:#fff;
-		z-index: 1;
-		transition-duration: 0.3s;*/
-		width: 23%;
-	}
 
-		.mod .modContent .modItemOne{
-			width: 31% ;
-
-		}
-		.mod .modItem:hover .modBox{
-		border-top: 4px solid #408abf;
-		border-right: 1px solid #408abf;
-		border-left: 1px solid #408abf;
-		border-bottom: 1px solid #408abf;
-		box-sizing: border-box;
-		height: 520px;
-		top:-20px;
-		transition: all 0.3s linear ;
-
-		/*width: 31%;*/
-	}
-
-	.modContent:hover .modItem{
-		width: 23%;
-		
-	} 
-
-	.modContent:hover .modBox{
-		border-top: 4px solid #d9d9d9 ;
-		border-right: 1px solid #d9d9d9 ;
-		border-left:none;
-		border-bottom: none ;
-		box-sizing: border-box;
-		/*background: #fff;*/
-		top: 0px;
-		height:100%;
-	}
-	.modContent:hover .modDetail{
-		display: none !important;
-	}
-	.modContent:hover .modPreview{
-		display: block;
-	}
-
-	.mod .modItem:hover .modDetail{
-		display: block  !important;
-	}
-
-	
-
-	.mod .modItem:hover {
-		width: 31%;
-		
-	}
-
-	.mod .modItem:hover .modDetail{
-		display: block;
-	}
-	.mod .modItem:hover .modPreview{
-		display: none;
-	}
-	}
 
 
 
