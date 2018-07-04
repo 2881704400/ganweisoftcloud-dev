@@ -233,14 +233,15 @@
 		methods:{
 			aa:function($event){
 				var width=$(document).width()
-				if(width>768){
+				var currentBoxWidth=$event.target.parentNode.style.width;
+				if(width>768&&currentBoxWidth!="31%"){
 					var htm=$(".modItem:eq(0)");
 					$(htm).find(".modBox").removeClass('bodColor');
 					var html=$event.target;
 
 					$(html).parent().css({"width":"31%","transition":"all 0.3s ease"});
-					$(html).find(".modPreview").hide();
-					$(html).find(".modDetail").fadeIn();
+					$(html).find(".modPreview").stop().hide();
+					$(html).find(".modDetail").stop().fadeIn();
 					$(html).css({
 						"height":"520px",
 						"top":"-20px",
@@ -252,8 +253,8 @@
 					});
 
 
-					$(html).parent().siblings().find(".modPreview").fadeIn();
-					$(html).parent().siblings().find(".modDetail").hide();
+					$(html).parent().siblings().find(".modPreview").stop().fadeIn();
+					$(html).parent().siblings().find(".modDetail").stop().hide();
 					$(html).parent().siblings().css({
 						"width":"23%",
 						"transition":"all 0.3s ease"
