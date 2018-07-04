@@ -84,7 +84,7 @@
 	}
 	
 	.example>p{
-		font-size: 1.8rem;
+		font-size:30px;
 		padding: 15px 0;
 		text-align: center;
 	}
@@ -112,7 +112,7 @@
     	margin-bottom: 30px;
     	position: relative;
     	top: 0;
-    	
+    	transition-duration: .2s;
 
 	}
 	.example .itemList .itemCon:hover{
@@ -123,10 +123,11 @@
 		-o-transition: all .2s linear;
 	}
 	.example .itemList .itemCon:hover .itemWrap{
-		-moz-box-shadow:5px 5px 14px #bdbdbd, -5px 5px 14px #bdbdbd; 
-		-webkit-box-shadow:5px 5px 14px #bdbdbd, -5px 5px 14px #bdbdbd; 
-		-o-box-shadow:5px 5px 14px #bdbdbd, -5px 5px 14px #bdbdbd; 
-		box-shadow:5px 5px 14px #bdbdbd, -5px 5px 14px #bdbdbd;
+
+		-moz-box-shadow:-3px 3px 6px rgba(0,0,0,.1), 3px 0px 6px rgba(0,0,0,.1);
+		 -webkit-box-shadow:-3px 3px 6px rgba(0,0,0,.1), 3px 0px 6px rgba(0,0,0,.1); 
+		 box-shadow:-3px 3px 6px rgba(0,0,0,.1), 3px 0px 6px rgba(0,0,0,.1);
+
 		transition: all .2s linear;
 		-moz-transition: all .2s linear;
 		-webkit-transition: all .2s linear;
@@ -136,6 +137,7 @@
 		padding:15px 0px;
 		border:1px solid #bdbdbd;
 		box-sizing: border-box;
+
 		-moz-box-shadow:0px 0px 0px #eee, 0px 0px 0px #eee; 
 		-webkit-box-shadow:0px 0px 0px #eee, 0px 0px 0px #eee; 
 		-o-box-shadow:0px 0px 0px #eee, 0px 0px 0px #eee; 

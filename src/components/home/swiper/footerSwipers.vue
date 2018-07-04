@@ -1,7 +1,7 @@
 <template>
 	<div class="footerSwiper">
 		<p >共性平台+应用子集发展模式</p>
-		<p>结合行业用户,快速拓展安防、交通、环保、物流、电网等行业领域</p>
+		<p class="subTit">结合行业用户,快速拓展安防、交通、环保、物流、电网等行业领域</p>
 		<div class="swiper-container">
 		    <div class="swiper-wrapper">
 		        <div class="swiper-slide">
@@ -137,11 +137,14 @@
 
 	}
 	.footerSwiper>p{
-		font-size: 1.8rem;
+		font-size:30px;
 		padding: 15px 0;
 		text-align: center;
 	}
-	
+	.footerSwiper .subTit{
+		font-size: 18px;
+		line-height: 1.5;
+	}
 	.swiper-container{
 		width: 100%;
 		height:400px;
@@ -190,7 +193,7 @@
 
 	.swiper-slide .mask .content .itemImgPanel i{
 		font-size:50px;
-		/*color:#408abf;*/
+		color:#408abf;
 	}
 
 	.swiper-slide .mask .itemTitle{
@@ -254,17 +257,23 @@
 		-webkit-transition: all .5s ease;
 		-o-transition: all .5s ease;
 	}
-	/*.swiper-slide:hover .icon{
-		color: #fff;
+	.swiper-slide:hover  .iconfont{
+		color: #fff !important;
+		/*background: red;*/
 		transition: all .5s ease;
 		-moz-transition: all .5s ease;
 		-webkit-transition: all .5s ease;
 		-o-transition: all .5s ease;
-	}*/
+	}
 	.itemLink:hover{
 		background: #fff;
 		color: #202a4e;
 
+	}
+	.swiper-button-next, .swiper-button-prev{
+			width: 30px;
+			height: 30px;
+			background-size: 30px 30px;
 	}
 	@media screen and (max-width: 768px){
 		.footerSwiper{

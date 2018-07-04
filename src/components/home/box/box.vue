@@ -84,7 +84,7 @@
 		padding-bottom: 100px;
 	}
 	.boxList>p{
-		font-size: 1.8rem;
+		font-size: 30px;
 		padding: 30px 0;
 		text-align: center;
 	}

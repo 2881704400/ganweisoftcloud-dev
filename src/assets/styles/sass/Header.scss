@@ -8,7 +8,7 @@
         width: 100%;
         background: #111; //#435A78
         .header-logo {
-            background: #435A78;
+            background: #202a4e;
             .navigation-inner {
                 position: relative;
                 max-width: 1200px;
@@ -121,6 +121,10 @@
         }
         .header-nav {
             background: #2E425D;
+            position: absolute;
+            top: 51px;
+            left: 0;
+            width: 100%;
             .categories {
                 z-index: 999;
                 position: relative;
@@ -172,12 +176,11 @@
                                 display: block;
                             }
                             h2 a {
-                                //                              background: #213045;
                                 color: #179d83;
                             }
                         }
                         ul.menu-list {
-                            margin-top: 2px;
+                            margin-top: 4px;
                             padding-top: 10px;
                             padding-bottom: 20px;
                             display: none;
@@ -232,8 +235,11 @@
                                         }
                                         &:hover {
                                             background: #16212F;
-                                            a span {
-                                                color: #179d83;
+                                            &>a {
+                                                span,
+                                                i {
+                                                    color: #179d83;
+                                                }
                                             }
                                         }
                                     }
@@ -244,8 +250,12 @@
                             padding: 0 10px;
                             &>li {
                                 padding: 0px 20px !important;
+                                cursor: pointer;
                                 &:hover {
                                     background: #16212F;
+                                    a {
+                                        color: #179d83;
+                                    }
                                 }
                             }
                         }
@@ -420,7 +430,7 @@
                             font-size: 14px;
                             white-space: nowrap;
                             line-height: 30px;
-                            &:hover {
+                            &:active {
                                 color: #179d83;
                             }
                         }
@@ -449,9 +459,12 @@
                                         font-size: 14px;
                                     }
                                 }
-                                &:hover {
-                                    a span {
-                                        color: #179d83;
+                                &:active {
+                                    &>a {
+                                        span,
+                                        i {
+                                            color: #179d83;
+                                        }
                                     }
                                 }
                             }

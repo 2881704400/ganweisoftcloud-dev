@@ -10,11 +10,11 @@
 			</div>
 
 			<Row class="modContent">
-				<Col class="modItem" :lg="6" :md="6" :sm="12" :xs="24" >
-					<div class="modBox" @mouseenter="showDet" @mouseleave="showPre">
-						<div class="modPreview" style="display: none;">
+				<Col class="modItem modItemOne" :lg="6" :md="6" :sm="12" :xs="24" >
+					<div class="modBox modBoxOne" >
+						<div class="modPreview modPreviewOne">
 							<div class="modPreName">
-								<i class="iconfont icon-dengpao"></i>
+								<i class="iconfont icon-dengpao" ></i>
 								<h3>创新</h3>
 								<p>赋能智造</p>
 							</div>
@@ -32,9 +32,9 @@
 								</ul>
 							</div>
 						</div>
-						<div class="modDetail" style="display: block;">
+						<div class="modDetail modDetailOne">
 							<div class="modDetailName">
-								<i  class="iconfont icon-dengpao"></i>
+								<i  class="iconfont icon-dengpao" style="position: relative;top: -2px;"></i>
 								<h3>创新</h3>
 								<p>基于物联设备的大数据分析为机器画像，同时为设备及其拥有者提供差异性的保险、租赁等创新服务。</p>
 
@@ -67,7 +67,7 @@
 					
 				</Col>
 				<Col class="modItem" :lg="6" :md="6" :sm="12" :xs="24" ref="aaa">
-					<div class="modBox"  @mouseenter="showDet" @mouseleave="showPre">
+					<div class="modBox" >
 						<div class="modPreview">
 							<div class="modPreName">
 								<i class="iconfont icon-yingyong"></i>
@@ -112,8 +112,8 @@
 						</div>
 					</div>
 				</Col>
-				<Col class="modItem" :lg="6" :md="6" :sm="12" :xs="24">
-					<div class="modBox"  @mouseenter="showDet" @mouseleave="showPre">
+				<Col class="modItem" :lg="6" :md="6" :sm="12" :xs="24" >
+					<div class="modBox" >
 						<div class="modPreview">
 							<div class="modPreName">
 								<i class="iconfont icon-bazi"></i>
@@ -168,7 +168,7 @@
 					</div>
 				</Col>
 				<Col class="modItem" :lg="6" :md="6" :sm="12" :xs="24" >
-					<div class="modBox"  @mouseenter="showDet" @mouseleave="showPre">
+					<div class="modBox">
 						<div class="modPreview">
 							<div class="modPreName">
 								<i class="iconfont icon-Share"></i>
@@ -228,65 +228,25 @@
 	</div>
 </template>
 <script>
+	
 	export default{
-		data(){
-			return{
+		// methods:{
+		// 	aa:function($event){
+		// 		// var html=$event.target;
+		// 		// $(html).addClass('bodColor');
+		// 		// console.log($event);
+		// 		// console.log(2);
+		// 	},bb:function($event){
+		// 		var html=$event.target;
+		// 		$(html).parent().css({"width":"31%"});
+		// 		$(html).css({"height":"520px","top":"-20px"})
+		// 		$(html).parent().siblings().css({"width":"23%"}).find(".modBox").css({"height":"100%","top":"0px"})
 
-			}
-		},methods: {
-
-			showDet:function($event){
-				var width=$(document).width();
-				var currentBoxWidth=$event.target.parentNode.style.width;
-				if(width>768&&currentBoxWidth!="31%"){
-					var html=$event.target.parentNode;
-					$(html).find(".modBox").addClass('bodColor');
-					$(html).siblings().find(".modBox").removeClass('bodColor');
-					$(html).find(".modPreview").hide();
-					$(html).find(".modDetail").show();
-
-					$(html).siblings().stop().animate({
-						width:"23%"
-						},
-						100, function() {
-					}).find(".modBox").stop().animate({
-						height: "100%",
-						top: "0px"},
-						100, function() {
-					});
-					$(html).stop().animate({
-						width:"31%"
-						},
-						100, function() {
-						
-					}).find(".modBox").stop().animate({
-						height: "520px",
-						top: "-20px"},
-						300, function() {
-					});
-					
-
-
-					$(html).siblings().find(".modDetail").hide();
-					$(html).siblings().find(".modPreview").show();
-				}
-
-
-				
-
-			},showPre(){}
-
-		},mounted:function(){
-			var width=$(document).width();
-			if(width>768){
-				$(".modItem").eq(0).find(".modBox").addClass('bodColor');
-				$(".modItem").eq(0).css({"width":"31%"}).find(".modBox").css({"height":"520px","top":"-20px"});
-				$(".modItem").eq(0).siblings().css({"width":"23%"});
-			}
-			
-
-
-		}
+		// 		// $(html).css({"top":"-20px"})
+		// 		// console.log(2222);
+		// 	}
+		// }
+		
 	}
 </script>
 <!-- d9d9d9 -->
@@ -313,7 +273,14 @@
 		max-width: 1200px;
 		min-width: 320px;
 		margin:0 auto;
+
 	}
+
+
+
+
+
+
 	.mod .modInner .modTitle{
 		text-align: center;
 	}
@@ -322,15 +289,20 @@
 		line-height: 1.5em;
 	}
 	.mod .modContent{
-		background: #fff;
 		margin-top:60px;
 		height: 480px;
-
 	}
 	.mod .modContent .modItem{
 		height: 100%;
 		background:#fff;
+		z-index: 1;
+		transition-duration: 0.3s;
+		/*width: 23%;*/
 	}
+
+	
+
+
 	.mod .modContent .modBox{
 		border-top: 4px solid #d9d9d9;
 		border-right: 1px solid #d9d9d9;
@@ -343,8 +315,21 @@
 		right: 0;
 		width: 100%;
 		height: 100%;
+		z-index: 999;
+		/*transition: all 0s cubic-bezier(.4,0,.2,1),z-index 0s .12s;*/
+		/*animation-fill-mode: backwards  ;*/
 	}
+	
+	/*.mod .modContent .modItemOne .modBox{
+		height: 520px;
+		top:-20px;
+		border-top: 4px solid #408abf ;
+		border-right: 1px solid #408abf ;
+		border-left: 1px solid #408abf ;
+		border-bottom: 1px solid #408abf ;
+		box-sizing: border-box  ;
 
+	}*/
 
 
 	.mod .modContent .modBox .modPreview{
@@ -354,9 +339,7 @@
 
 
 	}
-	.mod .modContent .modBox .modPreview{
-		
-	}
+	
 	.mod .modContent .modBox .modPreview .modPreName{
 		padding:20px 0;
 		margin-right: 15px;
@@ -394,6 +377,7 @@
 		font-size: 14px;
 		line-height: 42px;
 		color: #666;
+
 	}
 
 
@@ -415,6 +399,7 @@
 	.mod .modContent .modBox .modDetail .modDetailName i{
 		font-size: 32px;
 		display: inline-block;
+		vertical-align: middle;
 		color:#408abf;
 	}
 	.mod .modContent .modBox .modDetail .modDetailName h3{
@@ -436,6 +421,9 @@
 		margin:0 20px;
 		padding-top: 5px;
 	}
+	.mod .modContent .modBox .modDetail .modDetailMenu .moreLink:hover{
+		text-decoration: underline;
+	}
 	.mod .modContent .modBox .modDetail .menuList{
 		min-height: 278px;
 		height: auto;
@@ -443,6 +431,7 @@
 	.mod .modContent .modBox .modDetail .menuList .menuItem{
 		min-height: 73px;
 		padding:5px 20px 8px;
+		cursor: pointer;
 	}
 	.mod .modContent .modBox .modDetail .menuList .menuItem .title{
 		font-weight: 700;
@@ -478,36 +467,29 @@
 		-webkit-transition: all .5s ease;
 		-o-transition: all .5s ease;
 	}
+	
 
 
-/*
-	.mod .modItem:hover{
-		border-top: 4px solid #179d83;
-		border-right: 1px solid #179d83;
-		border-left: 1px solid #179d83;
-		border-bottom: 1px solid #179d83;
-		box-sizing: border-box;
+	.mod .modItem .modDetail .menuItem:hover{
+		background: #f2f2f5;
+		transition: background 0.5s linear;
 	}
 	
-	.mod .modItem:hover .modPreview{
-		opacity: 0;
-		height: 0;
-		transition: all .2s  ease;
-		-moz-transition: all .2s ease;
-		-webkit-transition: all .2s ease;
-		-o-transition: all .2s ease;
+
+	
+	.mod .modContent .modBox .modDetailOne{
+		display: block;
 	}
-	.mod .modItem:hover .modDetail{
-		opacity: 1;
-		transition: all .5s  ease;
-		-moz-transition: all .5s ease;
-		-webkit-transition: all .5s ease;
-		-o-transition: all .5s ease;
-	}*/
-	@media screen and (max-width: 768px){
+	.modPreviewOne{
+		display: none;
+	}
+	
+	
+	
+	@media screen and (max-width: 1024px){
 
 		.mod .modContent .modBox .modPreview{
-				display: none;
+			display: none;
 		}
 		.mod .modContent .modBox .modDetail{
 			display: block;
@@ -521,7 +503,86 @@
 			left: 4%;
 			border-right: none;
 		}
+		
+
+	}
+	@media screen and (min-width: 1024px){
+	.mod .modContent .modBoxOne{
+		border-top: 4px solid #408abf ;
+		border-right: 1px solid #408abf ;
+		border-left: 1px solid #408abf ;
+		border-bottom: 1px solid #408abf ;
+		box-sizing: border-box;
+		background: #fff;
+		top: -20px;
+		height: 520px;
+	}
+	.mod .modContent .modItem{
+		/*height: 100%;
+		background:#fff;
+		z-index: 1;
+		transition-duration: 0.3s;*/
+		width: 23%;
 	}
 
-	/*#179d83*/
+		.mod .modContent .modItemOne{
+			width: 31% ;
+
+		}
+		.mod .modItem:hover .modBox{
+		border-top: 4px solid #408abf;
+		border-right: 1px solid #408abf;
+		border-left: 1px solid #408abf;
+		border-bottom: 1px solid #408abf;
+		box-sizing: border-box;
+		height: 520px;
+		top:-20px;
+		transition: all 0.3s linear ;
+
+		/*width: 31%;*/
+	}
+
+	.modContent:hover .modItem{
+		width: 23%;
+		
+	} 
+
+	.modContent:hover .modBox{
+		border-top: 4px solid #d9d9d9 ;
+		border-right: 1px solid #d9d9d9 ;
+		border-left:none;
+		border-bottom: none ;
+		box-sizing: border-box;
+		/*background: #fff;*/
+		top: 0px;
+		height:100%;
+	}
+	.modContent:hover .modDetail{
+		display: none !important;
+	}
+	.modContent:hover .modPreview{
+		display: block;
+	}
+
+	.mod .modItem:hover .modDetail{
+		display: block  !important;
+	}
+
+	
+
+	.mod .modItem:hover {
+		width: 31%;
+		
+	}
+
+	.mod .modItem:hover .modDetail{
+		display: block;
+	}
+	.mod .modItem:hover .modPreview{
+		display: none;
+	}
+	}
+
+
+
 </style>
