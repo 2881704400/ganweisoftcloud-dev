@@ -121,6 +121,10 @@
         }
         .header-nav {
             background: #2E425D;
+            position: absolute;
+            top: 51px;
+            left: 0;
+            width: 100%;
             .categories {
                 z-index: 999;
                 position: relative;
