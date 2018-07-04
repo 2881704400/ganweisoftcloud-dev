@@ -415,7 +415,7 @@
 	.mod .modContent .modBox .modDetail .modDetailName i{
 		font-size: 32px;
 		display: inline-block;
-		color:#179d83;
+		color:#408abf;
 	}
 	.mod .modContent .modBox .modDetail .modDetailName h3{
 		display: inline-block;
@@ -432,7 +432,7 @@
 	}
 	.mod .modContent .modBox .modDetail .modDetailMenu .moreLink{
 		font-size: 14px;
-		color: #179d83;
+		color: #408abf;
 		margin:0 20px;
 		padding-top: 5px;
 	}
@@ -457,10 +457,10 @@
 		margin-right: 15%;
 	}
 	.bodColor{
-		border-top: 4px solid #179d83 !important;
-		border-right: 1px solid #179d83  !important;
-		border-left: 1px solid #179d83  !important;
-		border-bottom: 1px solid #179d83  !important;
+		border-top: 4px solid #408abf !important;
+		border-right: 1px solid #408abf  !important;
+		border-left: 1px solid #408abf  !important;
+		border-bottom: 1px solid #408abf  !important;
 		box-sizing: border-box  !important;
 	}
 	.hideC{

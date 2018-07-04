@@ -25,7 +25,7 @@
 				setting: {
 					autoplay: true,
 					autoplaySpeed: 5000,
-					dots: 'inside',
+					// dots:false,
 					radiusDot: false,
 					trigger: 'hover',
 					arrow: 'always',
@@ -41,6 +41,7 @@
 		min-height: 200px;
 		/*margin: 15px;*/
 		overflow: hidden;
+		background: #202a4e;
 
 	}
 	.demo-carousel img{

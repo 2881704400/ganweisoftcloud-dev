@@ -1,12 +1,12 @@
 <template>
 	<div class="layout-row-box">
-		<Row class="wrapCon">
+		<Row class="wrapCon" >
 			<Col :lg="6" :md="6" :sm="12" :xs="12">
 				<Card class="listItem" dis-hover>
 					<Row type="flex" justify="center" align="middle">
 						<Col :lg="2" :md="2" :sm="2" :xs="2"></Col>
 						<Col class="iWrap" :lg="8" :md="8" :sm="22" :xs="22">
-							<i class="iconfont icon-atom"></i>
+							<i class="iconfont icon-wanwuhulian"></i>
 						</Col>
 						<Col class="itemCont" :lg="12" :md="12" :sm="22" :xs="22">
 							<h3>万物互联</h3>
@@ -74,15 +74,20 @@
 
 <style>
 	.layout-row-box {
-		width:80%;
+		width:100%;
 		/*height: 270px;*/
-		background: #fff;
+		background: #202a4e;
 		overflow: hidden;
 		padding: 10px 0 10px 0;
 		margin:0 auto;
 	}
+	.wrapCon{
+		width: 80%;
+		margin:0 auto;
+	}
 	.listItem{
 		width: 100%;border:0;
+		background: #202a4e;
 		border-right: 1px solid #dbdbdb !important;
 		border-radius: 0;
 		text-align: center;
@@ -91,10 +96,11 @@
 
 	}
 	.iWrap i{
-		font-size: 40px;
+		font-size: 50px;
 		position: relative;
 		top: 0;
-		color: #179d83;
+		color: #58a4da;
+		transition-duration: 0.2s;
 	}
 	.listItem:hover i{
 		top: -10px;
@@ -107,11 +113,13 @@
 		padding-bottom: 5px;
 		font-size: 16px;
 		line-height: 28px;
+		color: #fff;
 	}
 	.itemCont p{
 		color:#666;
 		line-height: 28px;
 		font-size: 14px;
+		color: #ddd;
 	}
 	@media screen and (max-width: 768px){
 		.layout-row-box{

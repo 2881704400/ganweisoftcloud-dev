@@ -170,7 +170,7 @@
 		right: 0;
 	}
 	.swiper-slide .mask .bg{
-		opacity: 0.82;
+		opacity: 0.8;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -185,10 +185,12 @@
 		bottom: 0;
 		right: 0;
 		height: 400px;
+		transition-duration: 0.5s;
 	}
 
 	.swiper-slide .mask .content .itemImgPanel i{
 		font-size:50px;
+		/*color:#408abf;*/
 	}
 
 	.swiper-slide .mask .itemTitle{
@@ -205,7 +207,7 @@
 		margin-top: 30px;
 		padding: 0 30px;
 		line-height: 24px;
-		
+		transition-duration: 0.5s;
 		opacity: 0;
 	}
 	.swiper-slide .mask .itemLink{
@@ -218,6 +220,7 @@
 		margin-top: 62px;
 		text-align: center;
 		opacity: 0;
+		transition-duration: 0.5s;
 		margin: 10px auto;
 	}
 	.swiper-slide:hover .content{
@@ -242,16 +245,25 @@
 		-webkit-transition: all .5s ease;
 		-o-transition: all .5s ease;
 	}
+
 	.swiper-slide:hover .bg{
-		background: rgb(36,172,141);
+		background: #202a4e;
+
 		transition: all .5s ease;
 		-moz-transition: all .5s ease;
 		-webkit-transition: all .5s ease;
 		-o-transition: all .5s ease;
 	}
+	/*.swiper-slide:hover .icon{
+		color: #fff;
+		transition: all .5s ease;
+		-moz-transition: all .5s ease;
+		-webkit-transition: all .5s ease;
+		-o-transition: all .5s ease;
+	}*/
 	.itemLink:hover{
 		background: #fff;
-		color: rgb(36,172,141);
+		color: #202a4e;
 
 	}
 	@media screen and (max-width: 768px){
