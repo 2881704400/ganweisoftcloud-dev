@@ -2,7 +2,7 @@
 	<div class="footerSwiper">
 		<p >共性平台+应用子集发展模式</p>
 		<p class="subTit">结合行业用户,快速拓展安防、交通、环保、物流、电网等行业领域</p>
-		<div class="swiper-container">
+		<div class="swiper-container" @mouseenter="stopSwiper" @mouseleave="startSwiper">
 		    <div class="swiper-wrapper">
 		        <div class="swiper-slide">
 		        	<a href="#">
@@ -78,25 +78,7 @@
 		        		</div>
 		        	</a>
 			    </div>
-		        <div class="swiper-slide">
-			        <a href="#">
-		        		<img class="itemBg" src="../../../assets/product/guangfu-bg.jpg" alt="">
-		        		<div class="mask">
-		        			<div class="bg"></div>
-		        			<div class="content">
-		        				<div class="itemImgPanel">
-		        					<i class="icon iconfont icon-icontubiao"></i>
-		        				</div>
-		        				<h3 class="itemTitle">光伏行业</h3>
-		        				<p class="itemDesc">
-		        					根云赋能工地施工行业，远程对区域内设备及设施的运行状态进行实时监控管理，及时掌握运行状态。实时地实现塔机间碰撞报警、危险情况制动、塔机区域防护、塔机施工环境监控、塔机运动状态监控等。还具有黑匣子功能。
-		        				</p>
-		        				<span class="itemLink:hover{
-		        			}">查看更多</span>
-		        			</div>
-		        		</div>
-		        	</a>
-			    </div>
+		       
 		    </div>
 		    
 		    <!-- 如果需要导航按钮 -->
@@ -111,10 +93,10 @@
 	export default{
 		data(){
 			return{
-
+				swiper:123
 			}
 		},mounted(){
-			new Swiper ('.swiper-container', {
+			this.swiper=new Swiper ('.swiper-container', {
 					loop:true,
 					autoplay : {
 					    delay:5000
@@ -126,6 +108,14 @@
 			    	slidesPerView:4,
 			})
 
+
+		},methods:{
+			stopSwiper:function(){
+				this.swiper.autoplay.stop();
+			},
+			startSwiper:function(){
+				this.swiper.autoplay.start();
+			}
 		}
 	}
 </script>
@@ -156,8 +146,6 @@
 		width: 25%;
 		height: 100%;
 		text-align: center;
-
-		/*border:1px solid red;*/
 		position: relative;
 		text-align: center;
 	}
@@ -195,12 +183,12 @@
 	}
 
 	.swiper-slide .mask .content .itemImgPanel i{
-		font-size:50px;
+		font-size:60px;
 		color:#408abf;
 	}
 
 	.swiper-slide .mask .itemTitle{
-		font-size: 22px;
+		font-size: 26px;
 		line-height: 24px;
 		margin: 0;
 		padding: 0;
@@ -230,7 +218,7 @@
 		margin: 10px auto;
 	}
 	.swiper-slide:hover .content{
-		top:0;
+		top:10px;
 		transition: all .5s ease;
 		-moz-transition: all .5s ease;
 		-webkit-transition: all .5s ease;
@@ -282,8 +270,12 @@
 		.footerSwiper{
 			padding-bottom: 20px;
 		}
+		
 		.footerSwiper>p{
-			font-size: 1.2rem;
+			font-size: 25px;
+		}
+		.footerSwiper .subTit{
+			font-size: 16px;
 		}
 		.swiper-slide .mask .content .itemImgPanel i{
 			font-size:30px;

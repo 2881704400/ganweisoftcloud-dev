@@ -3,7 +3,7 @@
 		
 		<div class="modInner">
 			<div class="modTitle">
-				<h2 >在这里有你所需的一切</h2>
+				<p >在这里有你所需的一切</p>
 				<div class="desTxt">
 					根云提供连接、计算、创新、应用等一站式物联网端到端产品与服务
 				</div>
@@ -15,7 +15,7 @@
 						<div class="modPreview modPreviewOne">
 							<div class="modPreName">
 								<i class="iconfont icon-dengpao" ></i>
-								<h3>创新</h3>
+								<p  class="titl">创新</p>
 								<p>赋能智造</p>
 							</div>
 							<div class="modPreMenu">
@@ -35,7 +35,7 @@
 						<div class="modDetail modDetailOne">
 							<div class="modDetailName">
 								<i  class="iconfont icon-dengpao" style="position: relative;top: -2px;"></i>
-								<h3>创新</h3>
+								<p  class="titl">创新</p>
 								<p>基于物联设备的大数据分析为机器画像，同时为设备及其拥有者提供差异性的保险、租赁等创新服务。</p>
 
 							</div>
@@ -71,7 +71,7 @@
 						<div class="modPreview">
 							<div class="modPreName">
 								<i class="iconfont icon-yingyong"></i>
-								<h3>应用</h3>
+								<p  class="titl">应用</p>
 								<p>共赢生态</p>
 							</div>
 							<div class="modPreMenu">
@@ -89,7 +89,7 @@
 						<div class="modDetail">
 							<div class="modDetailName">
 								<i  class="iconfont icon-yingyong"></i>
-								<h3>应用</h3>
+								<p  class="titl">应用</p>
 								<p>物联应用市场提供丰富的应用满足用户多样化需求，使用户可以方便地分析和管理设备，提高生产效率。</p>
 
 							</div>
@@ -117,7 +117,7 @@
 						<div class="modPreview">
 							<div class="modPreName">
 								<i class="iconfont icon-bazi"></i>
-								<h3>计算</h3>
+								<p  class="titl">计算</p>
 								<p>可靠平台</p>
 							</div>
 							<div class="modPreMenu">
@@ -137,7 +137,7 @@
 						<div class="modDetail">
 							<div class="modDetailName">
 								<i  class="iconfont icon-bazi"></i>
-								<h3>计算</h3>
+								<p  class="titl">计算</p>
 								<p>提供主流的云计算、云存储和大数据处理能力，使客户能够一键部署、按需使用、灵活配置、降低成本。</p>
 
 							</div>
@@ -172,7 +172,7 @@
 						<div class="modPreview">
 							<div class="modPreName">
 								<i class="iconfont icon-Share"></i>
-								<h3>连接</h3>
+								<p  class="titl">连接</p>
 								<p>开放物联</p>
 							</div>
 							<div class="modPreMenu">
@@ -192,7 +192,7 @@
 						<div class="modDetail">
 							<div class="modDetailName">
 								<i  class="iconfont icon-Share"></i>
-								<h3>连接</h3>
+								<p class="titl">连接</p>
 								<p>提供全行业各种类型设备一站式物联接入的核心产品和服务，让设备物联入网上云不再是一件难事。</p>
 
 							</div>
@@ -238,9 +238,9 @@
 					$(htm).find(".modBox").removeClass('bodColor');
 					var html=$event.target;
 
-					$(html).parent().css({"width":"31%","transition":"all 0.5s ease"});
+					$(html).parent().css({"width":"31%","transition":"all 0.3s ease"});
 					$(html).find(".modPreview").hide();
-					$(html).find(".modDetail").show();
+					$(html).find(".modDetail").fadeIn();
 					$(html).css({
 						"height":"520px",
 						"top":"-20px",
@@ -248,15 +248,15 @@
 						"borderRight":"1px solid #408abf",
 						"borderBottom":"1px solid #408abf",
 						"borderLeft":"1px solid #408abf",
-						"transition":"all 0.5s ease"
+						"transition":"all 0.3s ease"
 					});
 
 
-					$(html).parent().siblings().find(".modPreview").show();
+					$(html).parent().siblings().find(".modPreview").fadeIn();
 					$(html).parent().siblings().find(".modDetail").hide();
 					$(html).parent().siblings().css({
 						"width":"23%",
-						"transition":"all 0.5s ease"
+						"transition":"all 0.3s ease"
 					}).find(".modBox").css({
 						"height":"100%",
 						"top":"0px",
@@ -264,7 +264,7 @@
 						"borderRight":"1px solid #d9d9d9",
 						"borderBottom":"none",
 						"borderLeft":"none",
-						"transition":"all 0.5s ease",
+						"transition":"all 0.3s ease",
 					});
 				}
 				
@@ -296,11 +296,13 @@
 		padding:100px 0;
 		/*text-align: center;*/
 	}
-	h2{
+	.modTitle p{
+
 		font-size: 30px;
-		font-weight: 400px;
-		margin-bottom: 10px;
+		line-height: 1.5;
+		padding: 15px 0;
 	}
+	
 	ul,li{
 		list-style: none;
 	}
@@ -310,12 +312,6 @@
 		margin:0 auto;
 
 	}
-
-
-
-
-
-
 	.mod .modInner .modTitle{
 		text-align: center;
 	}
@@ -351,20 +347,9 @@
 		width: 100%;
 		height: 100%;
 		z-index: 999;
-		/*transition: all 0s cubic-bezier(.4,0,.2,1),z-index 0s .12s;*/
-		/*animation-fill-mode: backwards  ;*/
+		
 	}
-	
-	/*.mod .modContent .modItemOne .modBox{
-		height: 520px;
-		top:-20px;
-		border-top: 4px solid #408abf ;
-		border-right: 1px solid #408abf ;
-		border-left: 1px solid #408abf ;
-		border-bottom: 1px solid #408abf ;
-		box-sizing: border-box  ;
 
-	}*/
 
 
 	.mod .modContent .modBox .modPreview{
@@ -395,8 +380,12 @@
 	.mod .modContent .modBox .modPreview .modPreName i{
 		font-size: 40px;
 	}
-	.mod .modContent .modBox .modPreview .modPreName h3{
+	.mod .modContent .modBox .modPreview .modPreName  .titl{
 		font-size: 18px;
+		font-weight: 400;
+
+
+		/*font-weight: normal;*/
 	}
 	.mod .modContent .modBox .modPreview .modPreName p{
 		font-size: 14px;
@@ -437,15 +426,17 @@
 		vertical-align: middle;
 		color:#408abf;
 	}
-	.mod .modContent .modBox .modDetail .modDetailName h3{
+	.mod .modContent .modBox .modDetail .modDetailName .titl{
 		display: inline-block;
 		font-size: 18px;
-		color: #666;
-		font-weight: 400px;
+		color: #333;
+		font-weight: 400;
 		vertical-align: middle;
 		margin-bottom: 0;
+		width: auto;
 
 	}
+	
 	.mod .modContent .modBox .modDetail .modDetailMenu{
 		margin-top: 10px;
 
@@ -479,6 +470,7 @@
 		color: #666;
 		line-height: 1.5;
 		margin-right: 15%;
+		/*width: 340px;*/
 	}
 	.bodColor{
 		border-top: 4px solid #408abf !important;
@@ -522,6 +514,12 @@
 	
 	
 	@media screen and (max-width: 1024px){
+		.modTitle p{font-size: 25px;}
+		.modTitle .desTxt{
+			width: 98%;
+			margin: 0 auto;
+			font-size:16px ;
+		}
 
 		.mod .modContent .modBox .modPreview{
 			display: none;
@@ -539,10 +537,33 @@
 			border-right: none;
 		}
 		
+		
 
 	}
+	
+	@media screen and (min-width: 1024px){
 
+		.mod .modContent .modBox .modDetail .modDetailName p{
+			width: 300px;
+		}
+		.mod .modContent .modBox .modDetail .menuList .menuItem .titleTxt{
+		
+			width: 300px;
+		}	
 
+	}	
+	@media screen and (max-width: 1025px){
+
+		.mod .modContent .modBox .modDetail .modDetailName p{
+			width: auto;
+		}
+		.mod .modContent .modBox .modDetail .menuList .menuItem .titleTxt{
+		
+			width: auto;
+		}	
+
+	}	
+	
 
 
 </style>

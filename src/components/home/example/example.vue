@@ -116,7 +116,7 @@
 
 	}
 	.example .itemList .itemCon:hover{
-		top: -5px;
+		top: -3px;
 		transition: all .2s linear;
 		-moz-transition: all .2s linear;
 		-webkit-transition: all .2s linear;

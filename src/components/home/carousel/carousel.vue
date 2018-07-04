@@ -1,5 +1,5 @@
 <template>
-	<div class="layout-content swiper-container2">
+	<div class="layout-content swiper-container2" @mouseenter="stopSwiper" @mouseleave="startSwiper">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
 				<img src="../../../assets/home/banner0.png" />
@@ -28,9 +28,10 @@
 	export default{
 		data(){
 			return{
+				swiper:null
 			}
 		},mounted(){
-			new Swiper ('.swiper-container2', {
+			this.swiper=new Swiper ('.swiper-container2', {
 				loop:true,
 				speed:300,
 				autoplay : {
@@ -42,11 +43,20 @@
 			    },
 			    pagination: {
 				    el: '.swiper-pagination',
+				     clickable :true,
 				    type:'bullets'
 				 },
+
 			    // paginationType : 'bullets',
 			})
 
+		},methods:{
+			stopSwiper:function(){
+				this.swiper.autoplay.stop();
+			},
+			startSwiper:function(){
+				this.swiper.autoplay.start();
+			}
 		}
 	}
 	

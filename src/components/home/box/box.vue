@@ -120,7 +120,7 @@
 	
 	@media screen and (max-width: 768px){
 		.boxList>p{
-			font-size: 1.2rem;
+			font-size: 25px;
 		}
 	}
 </style>
