@@ -79,7 +79,11 @@
 	}
 </script>
 
-<style>
+<style scoped>
+	.ivu-row{
+		margin-left: auto;
+		margin-right: auto;
+	}
 	.boxList{
 		padding-bottom: 100px;
 	}

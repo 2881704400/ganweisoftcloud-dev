@@ -74,8 +74,17 @@
 </script>
 
 
-<style>
-
+<style scoped>
+	.ivu-row{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.ivu-card{
+		background: #202a4e;
+	}
+	.ivu-card-bordered{
+		border:none;
+	}
 	.layout-row-box {
 		width:100%;
 		/*height: 270px;*/
