@@ -219,6 +219,7 @@
 	}
 	.swiper-slide:hover .content{
 		top:10px;
+		color:#fff;
 		transition: all .5s ease;
 		-moz-transition: all .5s ease;
 		-webkit-transition: all .5s ease;
@@ -234,6 +235,7 @@
 	}
 	.swiper-slide:hover .itemDesc{
 		opacity: 1;
+		/*color:#fff;*/
 		transition: all .5s ease;
 		-moz-transition: all .5s ease;
 		-webkit-transition: all .5s ease;

@@ -86,4 +86,11 @@
 		height: auto;
 	}
 	
+	@media screen and (min-width: 768px){
+		.layout-content .swiper-button-next,.layout-content  .swiper-button-prev{
+			width: 50px ;
+			height: 50px;
+			background-size: 50px 50px ;
+		}
+	}
 </style>
