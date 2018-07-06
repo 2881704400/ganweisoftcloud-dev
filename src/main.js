@@ -8,11 +8,13 @@ import Axios from 'axios'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 import '../src/css/animate.min.css'
-import Swiper from 'swiper';
+import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.min.css'
 
-Vue.config.productionTip = false
 
+
+Vue.config.productionTip = false
+// Vue.component('icon',Icon)
 Vue.use(iView)
 Vue.prototype.Axios=Axios
 

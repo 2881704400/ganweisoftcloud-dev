@@ -49,10 +49,13 @@
 				</Card>
 			</Col>
 			<Col :lg="6" :md="12" :sm="12" :xs="12">
-				<Card  class="listItem" dis-hover style="border:none !important;">
+				<Card  class="listItem" dis-hover style="border:none !important;" >
 					<Row type="flex" justify="center" align="middle">
 						<!-- <Col :lg="2" :md="2" :sm="2" :xs="2"></Col> -->
-						<Col  class="iWrap" :lg="12" :md="12"  :sm="24" :xs="24"><i class="iconfont icon-chengshidanao"></i></Col>
+						<Col  class="iWrap" :lg="12" :md="12"  :sm="24" :xs="24" >
+							<i   class="iconfont icon-chengshidanao"></i>
+							<!-- <icon name="brain"></icon> -->
+						</Col>
 						<Col  class="itemCont" :lg="12" :md="12"  :sm="24" :xs="24">
 							<h3>城市大脑</h3>
 							<p>工业互联网国家队</p>
@@ -68,8 +71,10 @@
 </template>
 
 <script>
-	export default {
 
+	// Icon.inject('brain')
+	export default {
+		
 	}
 </script>
 

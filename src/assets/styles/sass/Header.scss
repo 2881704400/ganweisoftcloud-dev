@@ -149,12 +149,16 @@
                         h2 {
                             font-weight: 400;
                             margin: 0;
+                            height:100%;
+                            display:flex;
+                            align-items:center;
                             a {
                                 color: #fff;
                                 display: inline-block;
                                 vertical-align: middle;
                                 padding: 0 15px;
                                 color: #fff;
+                                // height:100%;
                                 font-size: 14px;
                                 -webkit-transition: background-color .4s;
                                 transition: background-color .4s;
@@ -180,7 +184,7 @@
                             }
                         }
                         ul.menu-list {
-                            margin-top: 4px;
+                            // margin-top: 4px;
                             padding-top: 10px;
                             padding-bottom: 20px;
                             display: none;

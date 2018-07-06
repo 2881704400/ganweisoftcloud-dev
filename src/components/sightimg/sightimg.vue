@@ -1,6 +1,8 @@
 <template>
 	<div class="sightimg" :hover="updateBgColor()">
-		<a href="#"><span></span></a>
+		<a href="#">
+			<img src="../../assets/img/qq.png">
+		</a>
 		<p>咨询我们</p>
 	</div>
 </template>
