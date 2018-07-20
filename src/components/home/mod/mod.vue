@@ -286,192 +286,166 @@
 	}
 </script>
 <!-- d9d9d9 -->
-<style>
+<style lang="scss">
+	ul,li{
+		list-style: none;
+	}
 	.mod{
 		width: 100%;
 		overflow: hidden;
 		min-height: 827px;
 		height: auto;
-		/*border:1px solid red;*/
 		background: #f2f2f5;
 		padding:100px 0;
-		/*text-align: center;*/
-	}
-	.modTitle p{
-
-		font-size: 30px;
-		line-height: 1.5;
-		padding: 15px 0;
-	}
-	
-	ul,li{
-		list-style: none;
-	}
-	.mod .modInner{
-		max-width: 1200px;
-		min-width: 320px;
-		margin:0 auto;
-
-	}
-	.mod .modInner .modTitle{
-		text-align: center;
-	}
-	.mod .desTxt {
-		font-size: 18px;
-		line-height: 1.5em;
-	}
-	.mod .modContent{
-		margin-top:60px;
-		height: 480px;
-	}
-	.mod .modContent .modItem{
-		height: 100%;
-		background:#fff;
-		z-index: 1;
-		transition-duration: 0.3s;
-		/*width: 23%;*/
-	}
-
-	
-
-
-	.mod .modContent .modBox{
-		border-top: 4px solid #d9d9d9;
-		border-right: 1px solid #d9d9d9;
-		box-sizing: border-box;
-		background: #fff;
-		position: absolute;
-		left: 0;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 999;
 		
-	}
+		.modInner{
+			max-width: 1200px;
+			min-width: 320px;
+			margin:0 auto;
+			.modTitle{
+				 p{
+				 	font-size: 30px;
+					line-height: 1.5;
+					padding: 15px 0;
+					text-align: center;
+				 }
+				 .desTxt {
+					font-size: 18px;
+					line-height: 1.5em;
+					text-align: center;
+				}
+							
+			}
+			.modContent{
+				margin-top:60px;
+				height: 480px;
+				.modItem{
+					height: 100%;
+					background:#fff;
+					z-index: 1;
+					transition-duration: 0.3s;
+					.modBox{
+						border-top: 4px solid #d9d9d9;
+						border-right: 1px solid #d9d9d9;
+						box-sizing: border-box;
+						background: #fff;
+						position: absolute;
+						left: 0;
+						top: 0;
+						bottom: 0;
+						right: 0;
+						width: 100%;
+						height: 100%;
+						z-index: 999;
+						.modPreview{
+							text-align: center;
+							.modPreName{
+								padding:20px 0;
+								margin-right: 15px;
+								margin-left:15px;
+								position: relative;
+								&:after{
+										content:"";
+										width: 40px;
+										height: 1px;
+										position: absolute;
+										bottom: 0;
+										left: 50%;
+										margin-left: -20px;
+										background-color: #d9d9d9;
+								}
+								i{
+									font-size:40px;
+								}
+								.titl{
+									font-size: 18px;
+									font-weight: 400;
+								}
+								 p{
+									font-size: 14px;
+								}
+							}
+							.modPreMenu{
+								margin-top: 25px;
+								.menuList{
+									height: 200px;
+									.menuItem{
+										font-size: 14px;
+										line-height: 42px;
+										color: #666;
 
+									}
+								}
+							}
+						}
+						.modDetail{
+							display: none;
+							.modDetailName {
+								padding:20px 0;
+								margin-right: 15px;
+								margin-left: 15px;
+								border-bottom: 1px solid #d9d9d9;
+								color: #666;
+								i{
+										font-size: 32px;
+										display: inline-block;
+										vertical-align: middle;
+										color:#408abf;
+								}
+								.titl{
+									display: inline-block;
+									font-size: 18px;
+									color: #333;
+									font-weight: 400;
+									vertical-align: middle;
+									margin-bottom: 0;
+									width: auto;
+								}
 
+							}
+							.modDetailMenu{
+								margin-top: 10px;
+								.moreLink{
+									font-size: 14px;
+									color: #408abf;
+									margin:0 20px;
+									padding-top: 5px;
+									&:hover{
+										text-decoration: underline;
+									}
+								}
+								.menuList{
+									min-height: 278px;
+									height: auto;
+									.menuItem{
+										min-height: 73px;
+										padding:5px 20px 8px;
+										cursor: pointer;
+										&:hover{
+											background:#f2f2f5;
+										}
+										.title{
+											font-weight: 400;
+											color: #000;
+											line-height: 30px;
+											font-size: 14px;
 
-	.mod .modContent .modBox .modPreview{
-		/*display: block;*/
-		text-align: center;
-		/*opacity: 1;*/
+										}
+										.titleTxt{
+											font-size: 14px;
+											color: #666;
+											line-height: 1.5;
+											margin-right: 15%;
+										}
+									}
+								}
+							}
+						}
+					}
 
-
-	}
-	
-	.mod .modContent .modBox .modPreview .modPreName{
-		padding:20px 0;
-		margin-right: 15px;
-		margin-left:15px;
-		position: relative;
-
-	}
-	.mod .modContent .modBox .modPreview .modPreName:after{
-		content:"";
-		width: 40px;
-		height: 1px;
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		margin-left: -20px;
-		background-color: #d9d9d9;
-	}
-	.mod .modContent .modBox .modPreview .modPreName i{
-		font-size: 40px;
-	}
-	.mod .modContent .modBox .modPreview .modPreName  .titl{
-		font-size: 18px;
-		font-weight: 400;
-
-
-		/*font-weight: normal;*/
-	}
-	.mod .modContent .modBox .modPreview .modPreName p{
-		font-size: 14px;
-	}
-	.mod .modContent .modBox .modPreview .modPreMenu{
-		margin-top: 25px;
-	}
-	.mod .modContent .modBox .modPreview .modPreMenu .menuList{
-		height: 200px;
-
-	}
-	.mod .modContent .modBox .modPreview .modPreMenu .menuList .menuItem{
-		font-size: 14px;
-		line-height: 42px;
-		color: #666;
-
-	}
-
-
-
-
-	.mod .modContent .modBox .modDetail{
-		display: none;
-		/*opacity: 0;*/
-
-	}
-	.mod .modContent .modBox .modDetail .modDetailName {
-		padding:20px 0;
-		margin-right: 15px;
-		margin-left: 15px;
-		border-bottom: 1px solid #d9d9d9;
-		color: #666;
-
-	}
-	.mod .modContent .modBox .modDetail .modDetailName i{
-		font-size: 32px;
-		display: inline-block;
-		vertical-align: middle;
-		color:#408abf;
-	}
-	.mod .modContent .modBox .modDetail .modDetailName .titl{
-		display: inline-block;
-		font-size: 18px;
-		color: #333;
-		font-weight: 400;
-		vertical-align: middle;
-		margin-bottom: 0;
-		width: auto;
-
-	}
-	
-	.mod .modContent .modBox .modDetail .modDetailMenu{
-		margin-top: 10px;
-
-	}
-	.mod .modContent .modBox .modDetail .modDetailMenu .moreLink{
-		font-size: 14px;
-		color: #408abf;
-		margin:0 20px;
-		padding-top: 5px;
-	}
-	.mod .modContent .modBox .modDetail .modDetailMenu .moreLink:hover{
-		text-decoration: underline;
-	}
-	.mod .modContent .modBox .modDetail .menuList{
-		min-height: 278px;
-		height: auto;
-	}
-	.mod .modContent .modBox .modDetail .menuList .menuItem{
-		min-height: 73px;
-		padding:5px 20px 8px;
-		cursor: pointer;
-	}
-	.mod .modContent .modBox .modDetail .menuList .menuItem .title{
-		font-weight: 700;
-		color: #000;
-		line-height: 30px;
-		font-size: 14px;
-	}
-	.mod .modContent .modBox .modDetail .menuList .menuItem .titleTxt{
-		font-size: 14px;
-		color: #666;
-		line-height: 1.5;
-		margin-right: 15%;
-		/*width: 340px;*/
+				}
+			}
+		}
 	}
 	.bodColor{
 		border-top: 4px solid #408abf !important;
@@ -480,37 +454,7 @@
 		border-bottom: 1px solid #408abf  !important;
 		box-sizing: border-box  !important;
 	}
-	.hideC{
-		opacity: 0;
-		height: 0;
-		transition: all .2s  ease;
-		-moz-transition: all .2s ease;
-		-webkit-transition: all .2s ease;
-		-o-transition: all .2s ease;
-	}
-	.showC{
-		opacity: 1;
-		transition: all .5s  ease;
-		-moz-transition: all .5s ease;
-		-webkit-transition: all .5s ease;
-		-o-transition: all .5s ease;
-	}
 	
-
-
-	.mod .modItem .modDetail .menuItem:hover{
-		background: #f2f2f5;
-		transition: background 0.5s linear;
-	}
-	
-
-	
-	.mod .modContent .modBox .modDetailOne{
-		display: block;
-	}
-	.modPreviewOne{
-		display: none;
-	}
 	
 	
 	
@@ -526,15 +470,15 @@
 			display: none;
 		}
 		.mod .modContent .modBox .modDetail{
-			display: block;
+			display: block !important;
 			opacity: 1;
 		}
 		.mod .modItem{
 			background: #f2f2f5 !important;
 		}
 		.mod .modItem .modBox{
-			width: 92%;
-			left: 4%;
+			width: 92%  !important;
+			left: 4%  !important;
 			border-right: none;
 		}
 		

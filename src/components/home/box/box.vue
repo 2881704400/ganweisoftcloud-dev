@@ -79,48 +79,49 @@
 	}
 </script>
 
-<style scoped>
+<style lang="scss">
 	.ivu-row{
 		margin-left: auto;
 		margin-right: auto;
 	}
+
 	.boxList{
 		padding-bottom: 100px;
+		&>p{
+			font-size: 30px;
+			padding: 30px 0;
+			text-align: center;
+		}
+		.boxWrap{
+			max-width: 1200px;
+			margin:0 auto;
+			text-align: center;
+			padding-top:50px;
+			.imgWrap{
+				max-width:310px;
+				margin:0 auto;
+				img{
+					display: block;
+					margin:0 auto;
+					height: 100%;
+					width: 100%;
+				}
+			}
+			.conWrap{
+				padding-top: 20px;
+				 .titTop{
+					font-size: 18px;
+					font-weight:normal;
+				}
+				.titBot{
+					font-size: 14px;
+					line-height: 1.5;
+					font-weight:normal;
+				}
+			}
+		}
 	}
-	.boxList>p{
-		font-size: 30px;
-		padding: 30px 0;
-		text-align: center;
-	}
-	.boxWrap{
-		max-width: 1200px;
-		margin:0 auto;
-		
-		text-align: center;
-		padding-top:50px;
-	}
-	.imgWrap{
-		max-width:310px;
-		margin:0 auto;
-	}
-	.imgWrap img{
-		display: block;
-		margin:0 auto;
-		height: 100%;
-		width: 100%;
-	}
-	.conWrap{
-		padding-top: 20px;
-	}
-	.conWrap .titTop{
-		font-size: 18px;
-		font-weight:normal;
-	}
-	.conWrap .titBot{
-		font-size: 14px;
-		line-height: 1.5;
-		font-weight:normal;
-	}
+	
 	
 	@media screen and (max-width: 768px){
 		.boxList>p{

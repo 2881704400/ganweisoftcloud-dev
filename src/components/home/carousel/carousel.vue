@@ -23,7 +23,7 @@
 
 </template>
 
-<script scope>
+<script>
 	import Swiper from 'swiper';
 	export default{
 		data(){
@@ -62,7 +62,7 @@
 	
 </script>
 
-<style >
+<style lang="scss">
 	.layout-content {
 		/*min-height: 200px;*/
 		height: auto;
@@ -71,21 +71,20 @@
 		background: #202a4e;
 		clear: both;
 		position: relative;
+		.swiper-slide{
+			height: auto;
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+		.swiper-pagination-bullet{
+			background: #eee;
+			width: 16px;
+			border-radius: 1px;
+			height: 4px;
+		}
 	}
-	.layout-content .swiper-slide{
-		height: auto;
-	}
-	.swiper-pagination-bullet{
-		background: #eee;
-		width: 16px;
-		border-radius: 1px;
-		height: 4px;
-	}
-	.layout-content .swiper-slide img{
-		width: 100%;
-		height: auto;
-	}
-	
 	@media screen and (min-width: 768px){
 		.layout-content .swiper-button-next,.layout-content  .swiper-button-prev{
 			width: 50px ;
@@ -93,4 +92,5 @@
 			background-size: 50px 50px ;
 		}
 	}
+
 </style>
